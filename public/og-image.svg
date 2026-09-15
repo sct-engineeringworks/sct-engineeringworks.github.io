@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="g" cx="82%" cy="34%" r="62%">
+      <stop offset="0" stop-color="#50d7e8" stop-opacity=".18" />
+      <stop offset="1" stop-color="#071119" stop-opacity="0" />
+    </radialGradient>
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M44 0H0V44" fill="none" stroke="#36505d" stroke-opacity=".25" />
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#071119" />
+  <rect width="1200" height="630" fill="url(#grid)" />
+  <rect width="1200" height="630" fill="url(#g)" />
+  <g transform="translate(880 315)" fill="none">
+    <circle r="190" stroke="#28404d" />
+    <circle r="126" stroke="#28404d" />
+    <circle r="68" stroke="#50d7e8" stroke-width="3" stroke-dasharray="80 20 32 14" />
+    <path d="M-220 0h440M0-220v440" stroke="#50d7e8" stroke-opacity=".75" />
+    <circle r="9" fill="#f2b84b" stroke="none" />
+  </g>
+  <text x="84" y="105" fill="#9cebf3" font-family="Consolas, monospace" font-size="24" letter-spacing="4">SCT ENGINEERING WORKS</text>
+  <text x="84" y="272" fill="#edf5f7" font-family="Arial, sans-serif" font-size="72" font-weight="700">Precision systems,</text>
+  <text x="84" y="352" fill="#50d7e8" font-family="Arial, sans-serif" font-size="72" font-weight="700">made credible.</text>
+  <text x="84" y="432" fill="#a6b7c0" font-family="Arial, sans-serif" font-size="27">Mechanical design · Precision metrology · Technical project delivery</text>
+  <text x="84" y="532" fill="#f2b84b" font-family="Consolas, monospace" font-size="21" letter-spacing="3">OTTAWA · CANADA</text>
+</svg>
+

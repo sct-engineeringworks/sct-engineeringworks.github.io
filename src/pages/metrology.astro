@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+---
+
+<BaseLayout title="Precision Metrology | SCT Engineering Works" description="Precision measurement architecture, uncertainty-aware mechanical design, calibration, validation, SPC, and traceability." alternatePath="/fr/metrologie/">
+  <header class="container page-hero">
+    <p class="section-kicker">Capability track 01</p>
+    <h1>Precision metrology</h1>
+    <p class="page-lede">Measurement credibility begins in the mechanical architecture. I connect datums, error sources, sensor integration, calibration, uncertainty, and acceptance criteria so that a system can defend its result.</p>
+  </header>
+
+  <section class="section container" data-reveal>
+    <div class="capability-grid">
+      <article class="capability-panel"><h3>Measurement architecture</h3><p>Define the measurand, reference chain, geometric interfaces, positioning strategy, sensor integration, and environmental sensitivities.</p></article>
+      <article class="capability-panel"><h3>Calibration strategy</h3><p>Design calibration references and procedures around traceability, repeatability, uncertainty contributors, and operational constraints.</p></article>
+      <article class="capability-panel"><h3>Verification and validation</h3><p>Translate requirements into test protocols, acceptance criteria, repeatable experiments, analysis routines, and documented evidence.</p></article>
+      <article class="capability-panel"><h3>Statistical control</h3><p>Use gauge R&R, Cp and Cpk, SPC charts, and interval optimization to monitor capability and improve equipment availability.</p></article>
+    </div>
+  </section>
+
+  <section class="section container" data-reveal>
+    <div class="section-heading"><div><span class="section-kicker">Demonstrated evidence</span><h2>Measurement outcomes in context.</h2></div><p>Public metrics are reported at the level approved for professional communication. Proprietary designs and datasets are excluded.</p></div>
+    <table class="evidence-table">
+      <thead><tr><th>Context</th><th>Contribution</th><th>Evidence</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Automated optical inspection</strong></td><td>Mechanical design, protocols, acceptance criteria, calibration, and production coordination</td><td>±5 µm achieved accuracy and 15% downtime reduction</td></tr>
+        <tr><td><strong>National form metrology</strong></td><td>Ultra-precision architecture, micrometric axes, error control, and analysis support</td><td>&lt; 20 nm uncertainty and 5× capability improvement</td></tr>
+        <tr><td><strong>Full-field sensor calibration</strong></td><td>3D physical reference design and industrialization</td><td>Standardized deployment across 2 production sites</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section light-section" data-reveal>
+    <div class="container">
+      <div class="section-heading"><div><span class="section-kicker">Relevant work</span><h2>Metrology case studies.</h2></div><p>Selected examples show how mechanical design and measurement science were connected to usable operational results.</p></div>
+      <div class="project-grid">
+        <ProjectCard eyebrow="Optical metrology" title="Automated optical test bench" description="A test system developed around repeatable measurement, validation, and transfer." href="/projects/optical-test-bench/" result="±5 µm accuracy" />
+        <ProjectCard eyebrow="Ultra-precision" title="National reference form metrology" description="A reference system for circularity and cylindricity measurement." href="/projects/national-form-metrology/" result="< 20 nm uncertainty" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+

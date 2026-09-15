@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+---
+
+<BaseLayout title="Conception mécanique | SCT Engineering Works" description="Conception mécanique de précision, machines spéciales, CAO, GD&T, chaînes de cotes, prototypage, validation et soutien à la production." lang="fr" alternatePath="/mechanical-design/">
+  <header class="container page-hero"><p class="section-kicker">Domaine de compétence 02</p><h1>Conception mécanique</h1><p class="page-lede">Je développe des mécanismes de précision et des équipements spéciaux depuis les exigences fonctionnelles jusqu’à l’architecture, la CAO, le tolérancement, le prototypage, la vérification et le transfert.</p></header>
+  <section class="section container" data-reveal><div class="capability-grid">
+    <article class="capability-panel"><h3>Concept et architecture</h3><p>Décomposer les fonctions, comparer les concepts, définir les interfaces, choisir les principes et expliciter les hypothèses de performance.</p></article>
+    <article class="capability-panel"><h3>Conception détaillée</h3><p>Développer les assemblages et plans de fabrication avec SolidWorks, CATIA V5, AutoCAD, GD&T, chaînes de cotes et gestion de configuration.</p></article>
+    <article class="capability-panel"><h3>Analyse et maîtrise des risques</h3><p>Appliquer cinématique, raisonnement par tolérances, SolidWorks Simulation, revues de conception et mesures de réduction des risques.</p></article>
+    <article class="capability-panel"><h3>Fabrication et transfert</h3><p>Soutenir prototypage, fournisseurs, DFM et DFA, essais, résolution de problèmes, mise en service, documentation et transfert.</p></article>
+  </div></section>
+  <section class="section container" data-reveal><div class="section-heading"><div><span class="section-kicker">Outils techniques</span><h2>Des outils choisis autour de la décision.</h2></div><p>Le logiciel soutient le travail sans remplacer des exigences claires, une mécanique saine, la maîtrise des tolérances et la validation physique.</p></div>
+    <table class="evidence-table"><thead><tr><th>Domaine</th><th>Outils et pratiques</th><th>Livrables habituels</th></tr></thead><tbody>
+      <tr><td><strong>CAO et définition</strong></td><td>SolidWorks CSWP et avancé, CATIA V5, AutoCAD, GD&T ASME Y14.5</td><td>Assemblages, plans détaillés, schémas de tolérancement, revues</td></tr>
+      <tr><td><strong>Analyse</strong></td><td>Chaînes de cotes, cinématique, SolidWorks Simulation, MATLAB</td><td>Études comparatives, notes de calcul, maîtrise des risques, objectifs de vérification</td></tr>
+      <tr><td><strong>Industrialisation</strong></td><td>DFM et DFA, prototypage rapide, coordination des fournisseurs, nomenclatures</td><td>Prototypes, dossiers libérés, moyens d’essai, documentation de transfert</td></tr>
+    </tbody></table>
+  </section>
+  <section class="section light-section" data-reveal><div class="container"><div class="section-heading"><div><span class="section-kicker">Réalisations associées</span><h2>Études de cas en conception.</h2></div><p>Les exemples couvrent un équipement optique automatisé et une référence physique d’étalonnage.</p></div><div class="project-grid">
+    <ProjectCard eyebrow="Moyens d’essai" title="Banc de mesure optique automatisé" description="Architecture mécanique développée pour la répétabilité, l’accès, l’étalonnage et les essais." href="/fr/projets/banc-mesure-optique/" result="Précision de ±5 µm" linkLabel="Lire l’étude de cas" />
+    <ProjectCard eyebrow="Matériel d’étalonnage" title="Référence 3D d’étalonnage optique" description="Référence physique industrialisée pour une utilisation répétable en production." href="/fr/projets/reference-etalonnage-3d/" result="2 sites de production" linkLabel="Lire l’étude de cas" />
+  </div></div></section>
+</BaseLayout>
+

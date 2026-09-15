@@ -1,0 +1,49 @@
+---
+interface Props {
+  lang?: 'en' | 'fr';
+  alternatePath?: string;
+}
+
+const { lang = 'en', alternatePath = lang === 'en' ? '/fr/' : '/' } = Astro.props;
+const isFr = lang === 'fr';
+const home = isFr ? '/fr/' : '/';
+const nav = isFr
+  ? [
+      { href: '/fr/metrologie/', label: 'Métrologie' },
+      { href: '/fr/conception-mecanique/', label: 'Conception' },
+      { href: '/fr/conduite-de-projet/', label: 'Projets' },
+      { href: '/fr/projets/', label: 'Réalisations' },
+    ]
+  : [
+      { href: '/metrology/', label: 'Metrology' },
+      { href: '/mechanical-design/', label: 'Design' },
+      { href: '/project-delivery/', label: 'Delivery' },
+      { href: '/projects/', label: 'Case studies' },
+    ];
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href={home} aria-label={isFr ? 'Accueil SCT Engineering Works' : 'SCT Engineering Works home'}>
+      <span class="brand-mark">SCT</span>
+      <span class="brand-divider" aria-hidden="true"></span>
+      <span class="brand-word">ENGINEERING<br />WORKS</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label={isFr ? 'Navigation principale' : 'Primary navigation'}>
+      {nav.map((item) => <a href={item.href}>{item.label}</a>)}
+      <a class="language-link" href={alternatePath} hreflang={isFr ? 'en' : 'fr'}>{isFr ? 'EN' : 'FR'}</a>
+    </nav>
+
+    <details class="mobile-nav">
+      <summary aria-label={isFr ? 'Ouvrir le menu' : 'Open menu'}>
+        <span></span><span></span><span></span>
+      </summary>
+      <nav aria-label={isFr ? 'Navigation mobile' : 'Mobile navigation'}>
+        {nav.map((item) => <a href={item.href}>{item.label}</a>)}
+        <a class="language-link" href={alternatePath} hreflang={isFr ? 'en' : 'fr'}>{isFr ? 'English' : 'Français'}</a>
+      </nav>
+    </details>
+  </div>
+</header>
+

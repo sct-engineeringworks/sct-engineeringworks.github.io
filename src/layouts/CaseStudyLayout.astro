@@ -1,0 +1,36 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+const { frontmatter } = Astro.props;
+const isFr = frontmatter.lang === 'fr';
+---
+
+<BaseLayout
+  title={`${frontmatter.title} | SCT Engineering Works`}
+  description={frontmatter.description}
+  lang={frontmatter.lang || 'en'}
+  alternatePath={frontmatter.alternate}
+>
+  <article class="case-study">
+    <header class="case-hero container">
+      <a class="back-link" href={isFr ? '/fr/projets/' : '/projects/'}>← {isFr ? 'Toutes les réalisations' : 'All case studies'}</a>
+      <div class="case-heading">
+        <div>
+          <p class="section-kicker">{frontmatter.category}</p>
+          <h1>{frontmatter.title}</h1>
+          <p class="case-summary">{frontmatter.description}</p>
+        </div>
+        <dl class="case-facts">
+          <div><dt>{isFr ? 'Contexte' : 'Context'}</dt><dd>{frontmatter.context}</dd></div>
+          <div><dt>{isFr ? 'Rôle' : 'Role'}</dt><dd>{frontmatter.role}</dd></div>
+          <div><dt>{isFr ? 'Résultat clé' : 'Key result'}</dt><dd>{frontmatter.result}</dd></div>
+          <div><dt>{isFr ? 'Divulgation' : 'Disclosure'}</dt><dd>{isFr ? 'Portée publique non confidentielle' : 'Non-confidential public scope'}</dd></div>
+        </dl>
+      </div>
+    </header>
+    <div class="case-body container prose" data-reveal>
+      <slot />
+    </div>
+  </article>
+</BaseLayout>
+

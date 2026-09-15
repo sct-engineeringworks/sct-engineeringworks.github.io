@@ -1,0 +1,42 @@
+<div class="precision-graphic" aria-hidden="true">
+  <svg viewBox="0 0 620 620" role="presentation">
+    <defs>
+      <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#50d7e8" stop-opacity="0.22" />
+        <stop offset="70%" stop-color="#50d7e8" stop-opacity="0.03" />
+        <stop offset="100%" stop-color="#50d7e8" stop-opacity="0" />
+      </radialGradient>
+      <filter id="glow">
+        <feGaussianBlur stdDeviation="3" result="blur" />
+        <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+      </filter>
+    </defs>
+    <circle cx="310" cy="310" r="285" fill="url(#halo)" />
+    <g fill="none" stroke="#263b48" stroke-width="1">
+      <circle cx="310" cy="310" r="216" />
+      <circle cx="310" cy="310" r="156" />
+      <circle cx="310" cy="310" r="92" />
+      <path d="M42 310h536M310 42v536" />
+      <path d="M120 120l380 380M500 120L120 500" stroke-dasharray="4 12" />
+    </g>
+    <g fill="none" stroke="#50d7e8" filter="url(#glow)">
+      <path d="M116 304c32-87 100-151 190-180 91 23 163 91 196 180-29 95-103 165-196 192-91-29-161-98-190-192Z" stroke-width="2" stroke-dasharray="3 8" />
+      <path d="M190 310a120 120 0 1 0 240 0 120 120 0 1 0-240 0" stroke-width="4" stroke-dasharray="120 24 48 18" />
+      <path d="M218 310h184M310 218v184" stroke-width="1.5" />
+      <circle cx="310" cy="310" r="12" fill="#50d7e8" fill-opacity="0.12" stroke-width="2" />
+    </g>
+    <g fill="#f2b84b">
+      <circle cx="310" cy="190" r="5" />
+      <circle cx="430" cy="310" r="5" />
+      <circle cx="310" cy="430" r="5" />
+      <circle cx="190" cy="310" r="5" />
+    </g>
+    <g fill="#9fb2be" font-family="ui-monospace, monospace" font-size="12" letter-spacing="1.4">
+      <text x="324" y="177">±5 µm</text>
+      <text x="443" y="305">TRACE</text>
+      <text x="324" y="452">VERIFY</text>
+      <text x="103" y="304">DATUM</text>
+    </g>
+  </svg>
+</div>
+

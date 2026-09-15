@@ -1,0 +1,21 @@
+---
+interface Props { lang?: 'en' | 'fr' }
+const { lang = 'en' } = Astro.props;
+const isFr = lang === 'fr';
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <p class="footer-brand">SCT Engineering Works</p>
+      <p>{isFr ? 'Conception mécanique · Métrologie de précision · Conduite de projets techniques' : 'Mechanical design · Precision metrology · Technical project delivery'}</p>
+    </div>
+    <div class="footer-meta">
+      <a href="https://github.com/sct-engineeringworks">GitHub</a>
+      <span>Ottawa, Ontario, Canada</span>
+      <span>© {year} SCT</span>
+    </div>
+  </div>
+</footer>
+

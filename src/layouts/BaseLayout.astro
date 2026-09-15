@@ -1,0 +1,82 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  lang?: 'en' | 'fr';
+  canonicalPath?: string;
+  alternatePath?: string;
+}
+
+const {
+  title,
+  description,
+  lang = 'en',
+  canonicalPath = Astro.url.pathname,
+  alternatePath,
+} = Astro.props;
+
+const siteName = 'SCT Engineering Works';
+const canonical = new URL(canonicalPath, Astro.site);
+const alternate = alternatePath ? new URL(alternatePath, Astro.site) : undefined;
+const ogImage = new URL('/og-image.png', Astro.site);
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#071119" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    {alternate && <link rel="alternate" hreflang={lang === 'en' ? 'fr' : 'en'} href={alternate} />}
+    <link rel="alternate" hreflang="x-default" href={new URL('/', Astro.site)} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">{lang === 'fr' ? 'Aller au contenu' : 'Skip to content'}</a>
+    <div class="page-shell">
+      <Header lang={lang} alternatePath={alternatePath} />
+      <main id="main-content">
+        <slot />
+      </main>
+      <Footer lang={lang} />
+    </div>
+    <script is:inline>
+      document.documentElement.classList.add('js');
+      const observed = document.querySelectorAll('[data-reveal]');
+      if ('IntersectionObserver' in window) {
+        const reveal = new IntersectionObserver((entries, observer) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          }
+        }, { threshold: 0.12 });
+        observed.forEach((element) => reveal.observe(element));
+      } else {
+        observed.forEach((element) => element.classList.add('is-visible'));
+      }
+    </script>
+  </body>
+</html>
+

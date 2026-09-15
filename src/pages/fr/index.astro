@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PrecisionGraphic from '../../components/PrecisionGraphic.astro';
+import MetricStrip from '../../components/MetricStrip.astro';
+import TrackCard from '../../components/TrackCard.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+
+const metrics = [
+  { value: '±5 µm', label: 'Précision atteinte sur un banc de mesure optique automatisé' },
+  { value: '< 20 nm', label: 'Incertitude obtenue sur une machine nationale de référence' },
+  { value: '15 %', label: 'Réduction des arrêts par la MSP et l’optimisation des étalonnages' },
+  { value: '2 sites', label: 'Déploiement d’une référence tridimensionnelle d’étalonnage' },
+];
+---
+
+<BaseLayout
+  title="SCT Engineering Works | Conception mécanique et métrologie de précision"
+  description="SCT conçoit et valide des systèmes mécaniques de précision, équipements de métrologie, machines spéciales et bancs d’essai automatisés depuis Ottawa."
+  lang="fr"
+  alternatePath="/"
+>
+  <section class="container hero">
+    <div class="hero-copy">
+      <p class="overline">Ottawa, Canada · Français et anglais</p>
+      <h1>Des systèmes précis,<span class="accent">des preuves solides.</span></h1>
+      <p class="hero-lede">Conception mécanique, métrologie de précision et conduite de projets techniques pour des systèmes qui doivent être fabriqués, mesurés, vérifiés et transférés avec confiance.</p>
+      <div class="button-row">
+        <a class="button" href="/fr/projets/">Découvrir les réalisations</a>
+        <a class="button secondary" href="#competences">Voir les compétences</a>
+      </div>
+    </div>
+    <div class="hero-graphic"><PrecisionGraphic /></div>
+  </section>
+
+  <div class="container"><MetricStrip metrics={metrics} /></div>
+
+  <section id="competences" class="section container" data-reveal>
+    <div class="section-heading">
+      <div>
+        <span class="section-kicker">Trois disciplines reliées</span>
+        <h2>De l’intention géométrique à la performance vérifiée.</h2>
+      </div>
+      <p>Le portfolio est organisé autour de trois contributions : concevoir le système, établir la confiance dans ses mesures et coordonner sa réalisation entre les disciplines.</p>
+    </div>
+    <div class="track-grid">
+      <TrackCard
+        index="01"
+        title="Métrologie de précision"
+        description="Architectures de mesure, stratégie d’étalonnage, conception guidée par l’incertitude, protocoles de validation et maîtrise statistique."
+        href="/fr/metrologie/"
+        linkLabel="Explorer la métrologie"
+        tags={['Incertitude', 'Étalonnage', 'MSP', 'Traçabilité']}
+      />
+      <TrackCard
+        index="02"
+        title="Conception mécanique"
+        description="Mécanismes de précision et machines spéciales développés depuis les exigences jusqu’aux plans détaillés, prototypes et soutien à la production."
+        href="/fr/conception-mecanique/"
+        linkLabel="Explorer la conception"
+        tags={['SolidWorks', 'GD&T', 'DFM/DFA', 'Éléments finis']}
+      />
+      <TrackCard
+        index="03"
+        title="Conduite de projets techniques"
+        description="Exécution structurée entre mécanique, contrôle, instrumentation, fournisseurs, validation, documentation et transfert."
+        href="/fr/conduite-de-projet/"
+        linkLabel="Explorer la conduite"
+        tags={['Exigences', 'Kanban', 'Risques', 'V&V']}
+      />
+    </div>
+  </section>
+
+  <section class="section light-section" data-reveal>
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">Études de cas choisies</span>
+          <h2>Des résultats avant les adjectifs.</h2>
+        </div>
+        <p>Chaque étude relie une contrainte réelle à l’approche, aux décisions, aux livrables et au résultat mesurable. Les détails de mise en œuvre confidentiels sont exclus.</p>
+      </div>
+      <div class="project-grid">
+        <ProjectCard eyebrow="Métrologie optique" title="Banc de mesure optique automatisé" description="Conception mécanique et validation d’un système automatisé pour la mesure de défauts numériques." href="/fr/projets/banc-mesure-optique/" result="Précision de ±5 µm" linkLabel="Lire l’étude de cas" />
+        <ProjectCard eyebrow="Systèmes ultraprecis" title="Référence nationale de mesure de forme" description="Réalisation multidisciplinaire d’une machine de référence pour la mesure de circularité et de cylindricité." href="/fr/projets/metrologie-forme-nationale/" result="Incertitude < 20 nm" linkLabel="Lire l’étude de cas" />
+        <ProjectCard eyebrow="Étalonnage en production" title="Référence 3D d’étalonnage optique" description="Architecture physique conçue pour standardiser l’étalonnage de capteurs optiques plein champ." href="/fr/projets/reference-etalonnage-3d/" result="Déployée sur 2 sites" linkLabel="Lire l’étude de cas" />
+        <ProjectCard eyebrow="Robotique et vision" title="Prise et dépose par vision robotique" description="Plateforme personnelle associant robot collaboratif, vision à obturateur global, étalonnage et détection d’objets." href="/fr/projets/prise-depose-vision/" result="Prototype étalonné" linkLabel="Lire l’étude de cas" status="En développement" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section container" data-reveal>
+    <div class="section-heading">
+      <div><span class="section-kicker">Méthode de travail</span><h2>Une trajectoire traçable du besoin à la réception.</h2></div>
+      <p>Les outils varient avec le système. La discipline reste la même : définir les preuves attendues, expliciter les décisions de conception et vérifier ce qui compte.</p>
+    </div>
+    <div class="method-grid">
+      <div class="method-step"><h3>Cadrer</h3><p>Traduire les besoins en exigences mesurables, interfaces, contraintes et critères d’acceptation.</p></div>
+      <div class="method-step"><h3>Concevoir</h3><p>Développer l’architecture, les tolérances, les plans, les prototypes, les analyses et la maîtrise des risques.</p></div>
+      <div class="method-step"><h3>Vérifier</h3><p>Planifier les essais, étalonner la chaîne de mesure, analyser les résultats et traiter les écarts.</p></div>
+      <div class="method-step"><h3>Transférer</h3><p>Coordonner fabrication, fournisseurs, documentation, démonstrations, mise en service et transfert.</p></div>
+    </div>
+  </section>
+
+  <section class="section container" data-reveal>
+    <div class="section-heading">
+      <div><span class="section-kicker">Fondations professionnelles</span><h2>Des qualifications au service des réalisations.</h2></div>
+      <p>La pratique de la conception est renforcée par les études, les certifications, la formation en gestion de projet et des distinctions internationales.</p>
+    </div>
+    <div class="credential-row">
+      <div class="credential"><strong>CSWP et modules avancés</strong><span>SolidWorks Professional, plans, tôlerie et constructions soudées</span></div>
+      <div class="credential"><strong>JAKA niveau 1</strong><span>Programmation, configuration et applications de robotique collaborative</span></div>
+      <div class="credential"><strong>Gestion de projet</strong><span>Project Management and Sustainability for Engineers, Toronto Metropolitan University</span></div>
+      <div class="credential"><strong>Doctorat</strong><span>Génie mécanique, Université Paris-Saclay et ENS Paris-Saclay</span></div>
+    </div>
+  </section>
+
+  <section class="section container" data-reveal>
+    <div class="cta-panel">
+      <div><span class="section-kicker">Possibilités professionnelles</span><h2>Construire des systèmes mécaniques fiables au Canada.</h2><p>Ouvert aux possibilités en conception mécanique, métrologie de précision, validation, machines spéciales et conduite de projets en Ontario, au Québec et ailleurs au Canada.</p></div>
+      <a class="button" href="https://github.com/sct-engineeringworks">Voir le profil GitHub</a>
+    </div>
+  </section>
+</BaseLayout>
+

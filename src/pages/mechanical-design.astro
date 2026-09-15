@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+---
+
+<BaseLayout title="Mechanical Design | SCT Engineering Works" description="High-precision mechanical design, special-purpose machines, CAD, GD&T, tolerance analysis, prototyping, validation, and production support." alternatePath="/fr/conception-mecanique/">
+  <header class="container page-hero">
+    <p class="section-kicker">Capability track 02</p>
+    <h1>Mechanical design</h1>
+    <p class="page-lede">I develop high-precision mechanisms and special-purpose equipment from functional requirements through architecture, CAD, tolerancing, prototyping, verification, and production handover.</p>
+  </header>
+
+  <section class="section container" data-reveal>
+    <div class="capability-grid">
+      <article class="capability-panel"><h3>Concept and architecture</h3><p>Decompose functions, compare concepts, define interfaces, select principles, and make key geometric and performance assumptions explicit.</p></article>
+      <article class="capability-panel"><h3>Detailed design</h3><p>Develop assemblies and manufacturing drawings using SolidWorks, CATIA V5, AutoCAD, GD&T, tolerance analysis, and configuration discipline.</p></article>
+      <article class="capability-panel"><h3>Analysis and risk control</h3><p>Apply kinematics, tolerance reasoning, SolidWorks Simulation, design reviews, and practical risk mitigation to precision systems.</p></article>
+      <article class="capability-panel"><h3>Build and transfer</h3><p>Support prototyping, suppliers, DFM and DFA, testing, issue resolution, commissioning, documentation, and production handover.</p></article>
+    </div>
+  </section>
+
+  <section class="section container" data-reveal>
+    <div class="section-heading"><div><span class="section-kicker">Technical toolset</span><h2>Tools selected around the decision.</h2></div><p>Software supports the work; it does not replace clear requirements, sound mechanics, tolerance ownership, or physical validation.</p></div>
+    <table class="evidence-table">
+      <thead><tr><th>Area</th><th>Tools and practices</th><th>Typical deliverables</th></tr></thead>
+      <tbody>
+        <tr><td><strong>CAD and definition</strong></td><td>SolidWorks CSWP and Advanced, CATIA V5, AutoCAD, GD&T ASME Y14.5</td><td>Assemblies, detail drawings, tolerance schemes, design reviews</td></tr>
+        <tr><td><strong>Analysis</strong></td><td>Tolerance analysis, kinematics, SolidWorks Simulation, MATLAB</td><td>Trade studies, calculation notes, risk controls, verification targets</td></tr>
+        <tr><td><strong>Industrialization</strong></td><td>DFM and DFA, rapid prototyping, supplier coordination, BOM and configuration</td><td>Prototype builds, released packages, test hardware, handover documentation</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section light-section" data-reveal><div class="container"><div class="section-heading"><div><span class="section-kicker">Relevant work</span><h2>Mechanical design case studies.</h2></div><p>Examples span automated optical equipment, physical calibration references, and ultra-precision measurement machinery.</p></div><div class="project-grid">
+    <ProjectCard eyebrow="Test systems" title="Automated optical test bench" description="Mechanical architecture developed for repeatability, access, calibration, and test execution." href="/projects/optical-test-bench/" result="±5 µm accuracy" />
+    <ProjectCard eyebrow="Calibration hardware" title="3D optical calibration reference" description="A physical calibration artefact industrialized for repeatable use in production." href="/projects/3d-calibration-reference/" result="2 production sites" />
+  </div></div></section>
+</BaseLayout>
+

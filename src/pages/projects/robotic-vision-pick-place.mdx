@@ -1,0 +1,59 @@
+---
+layout: ../../layouts/CaseStudyLayout.astro
+lang: en
+alternate: /fr/projets/prise-depose-vision/
+title: Robotic vision pick-and-place
+description: An independent development platform combining a JAKA Mini Cobo, global-shutter vision, eye-to-hand calibration, Python control, and object detection.
+category: Collaborative robotics and computer vision
+context: Independent prototype, 2026
+role: System integration, calibration, and software development
+result: Calibrated prototype in development
+---
+
+## Project objective
+
+The objective is to identify dice in a camera image, estimate their position relative to the robot base, and command a JAKA Mini Cobo to pick and place them using a suction end effector. The platform is designed as a compact demonstration of robotic integration, calibration, perception, coordinate transformation, and verification.
+
+This project is **in development**. Completed groundwork and remaining validation are separated below so the public record does not imply a finished end-to-end system.
+
+## System architecture
+
+| Layer | Current implementation |
+| --- | --- |
+| Robot | JAKA Mini Cobo collaborative robot with suction end effector |
+| Vision | InnoMaker UVC OV9281 monochrome global-shutter camera |
+| Control | Windows workstation, Python 3.10, JAKA SDK rebuilt for the target environment |
+| Calibration | Eye-to-hand transformation evaluated with TSAI, PARK, and HORAUD methods |
+| Perception | Image dataset with 1 to 5 dice per frame; YOLO training pipeline under development |
+
+## Work completed
+
+- established reliable Python communication with the robot after resolving SDK and binary compatibility;
+- recorded robot poses and tool-centre-point references required for motion and deposition;
+- computed eye-to-hand calibration solutions using three established methods;
+- structured image acquisition and annotation for variable dice counts;
+- defined the coordinate flow from camera observation to robot-base motion;
+- completed a separate JAKA Level 1 palletizing assignment and certification.
+
+## Current verification work
+
+The remaining work is to validate detection robustness, select the calibration solution on measured residuals, quantify pick-position error across the workspace, test failure handling, and demonstrate repeatable end-to-end cycles.
+
+Planned evidence includes:
+
+1. calibration residuals and independent check points;
+2. object-detection precision and recall on a held-out dataset;
+3. planar localization error in millimetres;
+4. pick success rate across positions and dice counts;
+5. documented failure modes and recovery behaviour.
+
+## What this demonstrates
+
+The project demonstrates practical integration across robot control, camera selection, coordinate frames, calibration algorithms, dataset preparation, computer vision, and experimental verification. It also demonstrates a deliberate refusal to label a prototype complete before repeatability is measured.
+
+> The target is not a single successful pick. The target is a measured, repeatable transformation from image coordinates to physical action.
+
+## Public disclosure note
+
+This is an independent learning and demonstration project. Future public code will exclude proprietary vendor binaries and will document external dependencies and hardware safety assumptions.
+

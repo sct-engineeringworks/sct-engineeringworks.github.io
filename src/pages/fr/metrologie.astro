@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+---
+
+<BaseLayout title="Métrologie de précision | SCT Engineering Works" description="Architecture de mesure, conception guidée par l’incertitude, étalonnage, validation, maîtrise statistique et traçabilité." lang="fr" alternatePath="/metrology/">
+  <header class="container page-hero"><p class="section-kicker">Domaine de compétence 01</p><h1>Métrologie de précision</h1><p class="page-lede">La crédibilité d’une mesure commence dans l’architecture mécanique. Je relie les références, les sources d’erreur, l’intégration des capteurs, l’étalonnage, l’incertitude et les critères d’acceptation.</p></header>
+  <section class="section container" data-reveal><div class="capability-grid">
+    <article class="capability-panel"><h3>Architecture de mesure</h3><p>Définir le mesurande, la chaîne de référence, les interfaces géométriques, le positionnement, l’intégration des capteurs et les sensibilités environnementales.</p></article>
+    <article class="capability-panel"><h3>Stratégie d’étalonnage</h3><p>Concevoir les références et procédures autour de la traçabilité, de la répétabilité, des contributions à l’incertitude et des contraintes d’exploitation.</p></article>
+    <article class="capability-panel"><h3>Vérification et validation</h3><p>Transformer les exigences en protocoles d’essai, critères d’acceptation, expériences répétables, routines d’analyse et preuves documentées.</p></article>
+    <article class="capability-panel"><h3>Maîtrise statistique</h3><p>Utiliser R&R, Cp, Cpk, cartes de contrôle et optimisation des intervalles pour surveiller la capabilité et améliorer la disponibilité.</p></article>
+  </div></section>
+  <section class="section container" data-reveal><div class="section-heading"><div><span class="section-kicker">Preuves démontrées</span><h2>Des résultats de mesure replacés dans leur contexte.</h2></div><p>Les indicateurs publics restent au niveau approuvé pour la communication professionnelle. Les conceptions et données propriétaires sont exclues.</p></div>
+    <table class="evidence-table"><thead><tr><th>Contexte</th><th>Contribution</th><th>Preuve</th></tr></thead><tbody>
+      <tr><td><strong>Inspection optique automatisée</strong></td><td>Conception mécanique, protocoles, critères d’acceptation, étalonnage et coordination avec la production</td><td>Précision de ±5 µm et réduction de 15 % des arrêts</td></tr>
+      <tr><td><strong>Métrologie nationale de forme</strong></td><td>Architecture ultraprecise, axes micrométriques, maîtrise des erreurs et soutien aux analyses</td><td>Incertitude &lt; 20 nm et capabilité multipliée par 5</td></tr>
+      <tr><td><strong>Étalonnage de capteurs plein champ</strong></td><td>Conception et industrialisation d’une référence physique tridimensionnelle</td><td>Déploiement standardisé sur 2 sites de production</td></tr>
+    </tbody></table>
+  </section>
+  <section class="section light-section" data-reveal><div class="container"><div class="section-heading"><div><span class="section-kicker">Réalisations associées</span><h2>Études de cas en métrologie.</h2></div><p>Deux exemples montrent comment la conception mécanique et la science de la mesure ont été reliées à des résultats opérationnels.</p></div><div class="project-grid">
+    <ProjectCard eyebrow="Métrologie optique" title="Banc de mesure optique automatisé" description="Un système développé autour de la répétabilité, de la validation et du transfert." href="/fr/projets/banc-mesure-optique/" result="Précision de ±5 µm" linkLabel="Lire l’étude de cas" />
+    <ProjectCard eyebrow="Ultraprécision" title="Référence nationale de mesure de forme" description="Un système de référence pour la mesure de circularité et de cylindricité." href="/fr/projets/metrologie-forme-nationale/" result="Incertitude < 20 nm" linkLabel="Lire l’étude de cas" />
+  </div></div></section>
+</BaseLayout>
+

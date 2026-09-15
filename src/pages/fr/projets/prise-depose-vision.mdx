@@ -1,0 +1,59 @@
+---
+layout: ../../../layouts/CaseStudyLayout.astro
+lang: fr
+alternate: /projects/robotic-vision-pick-place/
+title: Prise et dépose par vision robotique
+description: Plateforme indépendante associant un JAKA Mini Cobo, une caméra à obturateur global, l’étalonnage œil-main, la commande Python et la détection d’objets.
+category: Robotique collaborative et vision par ordinateur
+context: Prototype personnel, 2026
+role: Intégration, étalonnage et développement logiciel
+result: Prototype étalonné en développement
+---
+
+## Objectif du projet
+
+L’objectif est d’identifier des dés dans l’image d’une caméra, d’estimer leur position par rapport à la base du robot, puis de commander un JAKA Mini Cobo pour leur prise et leur dépose avec une ventouse. La plateforme démontre l’intégration robotique, l’étalonnage, la perception, les changements de repères et la vérification.
+
+Ce projet est **en développement**. Les fondations achevées et les validations restantes sont séparées afin de ne pas présenter comme terminé un système qui ne l’est pas encore.
+
+## Architecture du système
+
+| Couche | Mise en œuvre actuelle |
+| --- | --- |
+| Robot | Robot collaboratif JAKA Mini Cobo avec ventouse |
+| Vision | Caméra monochrome InnoMaker UVC OV9281 à obturateur global |
+| Commande | Poste Windows, Python 3.10, SDK JAKA reconstruit pour l’environnement cible |
+| Étalonnage | Transformation œil-main évaluée par les méthodes TSAI, PARK et HORAUD |
+| Perception | Images contenant 1 à 5 dés; apprentissage YOLO en cours |
+
+## Travail achevé
+
+- communication Python fiable avec le robot après résolution des compatibilités du SDK et des bibliothèques;
+- enregistrement des poses robot et des références du centre outil nécessaires au mouvement et au dépôt;
+- calcul de solutions d’étalonnage œil-main par trois méthodes établies;
+- structuration de l’acquisition et de l’annotation d’images avec un nombre variable de dés;
+- définition de la chaîne de coordonnées reliant l’observation caméra au mouvement dans la base robot;
+- réalisation séparée d’un projet de palettisation et obtention de la certification JAKA niveau 1.
+
+## Vérifications en cours
+
+Le travail restant vise à valider la robustesse de détection, sélectionner la solution d’étalonnage à partir des résidus, quantifier l’erreur de prise sur l’espace de travail, tester les échecs et démontrer des cycles répétables.
+
+Les preuves prévues comprennent :
+
+1. les résidus d’étalonnage et des points de contrôle indépendants;
+2. la précision et le rappel de la détection sur un jeu d’essai séparé;
+3. l’erreur de localisation plane en millimètres;
+4. le taux de réussite de prise selon les positions et le nombre de dés;
+5. les modes de défaillance et le comportement de reprise.
+
+## Ce que le projet démontre
+
+Le projet montre une intégration pratique de la commande robot, du choix de caméra, des repères, des algorithmes d’étalonnage, des données d’apprentissage, de la vision et de la vérification expérimentale. Il montre aussi le refus de déclarer un prototype terminé avant d’en mesurer la répétabilité.
+
+> L’objectif n’est pas une prise réussie isolée, mais une transformation mesurée et répétable entre les coordonnées de l’image et l’action physique.
+
+## Limite de divulgation
+
+Ce projet est indépendant. Le futur code public exclura les bibliothèques propriétaires du fabricant et documentera les dépendances externes ainsi que les hypothèses de sécurité matérielle.
+

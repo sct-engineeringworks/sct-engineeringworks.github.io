@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ProjectCard from '../../../components/ProjectCard.astro';
+---
+
+<BaseLayout title="Études de cas | SCT Engineering Works" description="Réalisations publiques choisies en métrologie de précision, conception mécanique, moyens d’essai automatisés et vision robotique." lang="fr" alternatePath="/projects/">
+  <header class="container page-hero"><p class="section-kicker">Réalisations choisies</p><h1>Études de cas techniques</h1><p class="page-lede">Une présentation concise du problème, du rôle, de la méthode, des livrables et des preuves. Les éléments appartenant aux employeurs ne sont pas reproduits.</p></header>
+  <section class="section light-section"><div class="container"><div class="project-grid">
+    <ProjectCard eyebrow="Métrologie optique" title="Banc de mesure optique automatisé" description="Conception mécanique et validation d’un système automatisé de mesure de défauts numériques." href="/fr/projets/banc-mesure-optique/" result="Précision de ±5 µm" linkLabel="Lire l’étude de cas" />
+    <ProjectCard eyebrow="Systèmes ultraprecis" title="Référence nationale de mesure de forme" description="Architecture et réalisation multidisciplinaire d’une machine nationale de référence." href="/fr/projets/metrologie-forme-nationale/" result="Incertitude < 20 nm" linkLabel="Lire l’étude de cas" />
+    <ProjectCard eyebrow="Étalonnage en production" title="Référence 3D d’étalonnage optique" description="Référence développée pour standardiser l’étalonnage de capteurs optiques plein champ." href="/fr/projets/reference-etalonnage-3d/" result="2 sites de production" linkLabel="Lire l’étude de cas" />
+    <ProjectCard eyebrow="Robotique et vision" title="Prise et dépose par vision robotique" description="Plateforme personnelle de commande robot, étalonnage œil-main, détection et manipulation répétable." href="/fr/projets/prise-depose-vision/" result="Prototype étalonné" linkLabel="Lire l’étude de cas" status="En développement" />
+  </div></div></section>
+  <section class="section container"><p class="disclosure-note"><strong>Limite de divulgation :</strong> le portfolio utilise des descriptions générales, des schémas préparés indépendamment et des indicateurs approuvés pour la communication professionnelle. La CAO, le code, les données, les plans, les dimensions, les images et les documents internes propriétaires sont exclus.</p></section>
+</BaseLayout>
+
