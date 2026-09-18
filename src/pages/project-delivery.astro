@@ -22,6 +22,7 @@ import ProjectCard from '../components/ProjectCard.astro';
   <section class="section container" data-reveal>
     <div class="section-heading"><div><span class="section-kicker">Delivery evidence</span><h2>Technical leadership anchored in outputs.</h2></div><p>The focus is not ceremony. It is making the next engineering decision visible, owned, supported by evidence, and connected to acceptance.</p></div>
     <table class="evidence-table"><thead><tr><th>Project signal</th><th>Delivery contribution</th><th>Result</th></tr></thead><tbody>
+      <tr><td><strong>Requirements-led research delivery</strong></td><td>Controlled scope, functional decomposition, design–build–measure sequencing, evidence limits, and research dissemination</td><td>13 requirements, 5 constraints, 14 feature groups, and 2019/2020 publications</td></tr>
       <tr><td><strong>Cross-functional coordination</strong></td><td>Led a 6-person mechanics, controls, and instrumentation team using Kanban and design reviews</td><td>National reference machine delivered at &lt; 20 nm uncertainty</td></tr>
       <tr><td><strong>Production transfer</strong></td><td>Coordinated R&D, production, suppliers, test protocols, acceptance criteria, and technical demonstrations</td><td>Calibration reference deployed across 2 sites</td></tr>
       <tr><td><strong>Operational improvement</strong></td><td>Introduced SPC monitoring and data-led calibration interval optimization</td><td>15% equipment downtime reduction</td></tr>
@@ -29,8 +30,8 @@ import ProjectCard from '../components/ProjectCard.astro';
   </section>
 
   <section class="section light-section" data-reveal><div class="container"><div class="section-heading"><div><span class="section-kicker">Relevant work</span><h2>Delivery case studies.</h2></div><p>These examples show coordinated technical work from requirements and design through verification and operational use.</p></div><div class="project-grid">
+    <ProjectCard eyebrow="Research project delivery" title="Additive-manufacturing test artifact" description="A staged requirements, design, manufacture, inspection, analysis, and dissemination workflow with explicit scope decisions." href="/projects/axiomatic-am-test-artifact/" result="7 controlled phases" featured />
     <ProjectCard eyebrow="Multidisciplinary delivery" title="National reference form metrology" description="A multi-year special-purpose machine delivered across mechanics, controls, instrumentation, and measurement science." href="/projects/national-form-metrology/" result="6-person team" />
     <ProjectCard eyebrow="Industrialization" title="3D optical calibration reference" description="A repeatable calibration solution moved from concept to use at two production sites." href="/projects/3d-calibration-reference/" result="2-site deployment" />
   </div></div></section>
 </BaseLayout>
-

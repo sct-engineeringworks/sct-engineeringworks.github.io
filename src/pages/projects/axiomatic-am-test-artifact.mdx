@@ -1,0 +1,109 @@
+---
+layout: ../../layouts/CaseStudyLayout.astro
+lang: en
+alternate: /fr/projets/artefact-fabrication-additive-conception-axiomatique/
+title: Axiomatic design of an AM test artifact
+description: Requirements-led mechanical design, physical LPBF manufacture, dimensional metrology, and traceable project delivery for a customized additive-manufacturing test artifact.
+category: Additive manufacturing · Design · Metrology
+context: Academic research case study, 2018–2020
+role: Artifact design, experimental study, analysis, and dissemination
+result: 62 reported values on one physical build
+---
+
+![CAD overview of the customized additive-manufacturing test artifact](/projects/am-test-artifact/cad-overview.png)
+
+## The engineering question
+
+No single benchmark geometry can represent every additive-manufacturing process, machine, scale, material, and inspection constraint. The project therefore addressed a more durable question:
+
+> How can a test artifact be designed systematically for a defined set of geometric-performance and measurement needs?
+
+I developed a requirements-led method that decomposed the evaluation objective, grouped related functions into modules, selected measurable geometric features, and iterated the layout against manufacturing, inspection, material, and build-time constraints.
+
+## Three inseparable project axes
+
+| Axis | Question addressed | Demonstrated work |
+| --- | --- | --- |
+| **Mechanical and axiomatic design** | What geometry should be created, and why? | Functional decomposition, requirement modules, FR–DP reasoning, feature selection, orientation, compact layout, CAD, dimensions, and GD&T intent |
+| **Precision metrology** | How will the design intent be measured and interpreted? | Datum strategy, scanner and probe access, laser point-cloud comparison, tactile CMM inspection, and physical form, size, and orientation deviations |
+| **Technical project delivery** | How can the work be scoped, executed, verified, and communicated? | Literature review, priorities, deliberate exclusions, resource constraints, staged design–build–measure delivery, evidence control, and publication milestones |
+
+## Axis 1 — Mechanical and axiomatic design
+
+The historical definition contained **13 functional requirements**, **5 design constraints**, and **14 feature groups**. The resulting artifact combined planar, prismatic, cylindrical, conical, spherical, internal, external, coaxial, slot, chamfer, and free-form features within a reported envelope of **73.8 × 68.85 × 16.65 mm**.
+
+The method did not begin with a predetermined geometry. It began with the evaluation purpose, then followed a controlled sequence:
+
+1. define and classify the requirements;
+2. decompose each need into elementary functions;
+3. group related functions to limit redundant features;
+4. select geometry, size, orientation, and repetition from the intended measurands;
+5. preserve scanner or probe access;
+6. balance coverage against material, build time, post-processing, and inspection effort.
+
+The research was later formalized with Axiomatic Design concepts: functional requirements, design parameters, design-matrix reasoning, requirement independence, and information-conscious solution selection.
+
+![Manufactured NC718 artifact showing decreasing internal and external features](/projects/am-test-artifact/manufactured-artifact.jpg)
+
+## Axis 2 — Precision metrology
+
+The artifact was physically manufactured and inspected. The available record documents the following chain:
+
+| Item | Recorded condition |
+| --- | --- |
+| Process and machine | Selective Laser Melting on an AddUp FormUp 350 |
+| Material | NC718, reported as Inconel alloy 718 |
+| Layer thickness | 40 µm |
+| Laser power | 190 W contouring; 201 W hatching |
+| Build plate | Not preheated |
+| Build duration | Approximately 8 hours |
+| Inspection condition | Artifact retained on the build plate |
+| Global comparison | Kreon laser scanner on a CMM; point-cloud-to-CAD comparison in CATIA and verification in GOM Inspect |
+| Form and orientation | Contact CMM with Renishaw MODUS |
+
+The numerical record contains **39 form and dimensional values** plus **23 orientation values**. Selected generated summaries are shown below.
+
+| Physical observation | Reported result | Engineering reading |
+| --- | ---: | --- |
+| Flatness of four base corner planes | Mean **0.367 mm**; range **0.2277–0.4682 mm** | Large lower-artifact deviations were associated with an apparent angular build-plate offset |
+| Form deviation of X/Y-oriented cylinders | Mean **0.595 mm** | Cross-build cylinders were markedly less accurate than Z-oriented cylindrical surfaces |
+| Form deviation of Z cylindrical surfaces | Mean **0.081 mm** | Orientation strongly influenced form accuracy |
+| Form deviation of unsupported cones | Mean **0.587 mm** | Visual and measured evidence both supported a support-aware design strategy |
+| External-feature dimensional deviation | Mean **0.041 mm** | External Z-oriented features were the more accurate comparison group |
+| Internal-feature dimensional deviation | Mean **0.173 mm** | The mean was **4.24×** the external-feature value |
+| Maximum reported concentricity error | **0.928 mm** | Coaxial relationships exposed a major alignment deviation |
+
+![Generated summary of the reported physical metrology results](/projects/am-test-artifact/metrology-summary.svg)
+
+The experiment was diagnostic rather than statistical: one compact artifact made orientation effects, unsupported-feature defects, internal-feature difficulty, and the apparent build-plate offset visible in a connected inspection problem.
+
+## Axis 3 — Technical project delivery
+
+The work was managed as a sequence of engineering decisions rather than as an isolated CAD exercise.
+
+| Phase | Management decision | Principal output |
+| --- | --- | --- |
+| Research framing | Compare existing artifacts and replace geometry-first selection with a requirements-led method | State-of-the-art review and design criteria |
+| Scope and priorities | Focus the first experiment on general GD&T assessment; defer causal experiments, repeat builds, and assembly pairs | Ranked requirements and explicit exclusions |
+| Concept development | Group related requirements to reduce geometric redundancy and resource consumption | Requirement modules and feature families |
+| Embodiment design | Balance coverage, accessibility, buildability, envelope, material, and post-processing | CAD model, feature architecture, and dimensioned drawing |
+| Build and inspection planning | Fix material, process parameters, on-plate inspection, laser scanning, and tactile checks | Manufacturing and inspection plan |
+| Verification and learning | Compare the physical artifact with nominal geometry and identify dominant deviations | Measurement tables, deviation maps, conclusions, and next actions |
+| Dissemination and reuse | Transform the study into durable research and engineering evidence | 2019 conference paper, 2020 journal article, and controlled portfolio case study |
+
+## What this project demonstrates
+
+- **Design:** the ability to translate broad evaluation objectives into a compact, measurable mechanical architecture.
+- **Metrology:** the ability to connect feature intent, access, datums, inspection technology, physical results, and interpretation limits.
+- **Project delivery:** the ability to control scope, resources, interfaces, evidence, decisions, and dissemination across a complete engineering lifecycle.
+
+## Evidence boundary
+
+The values describe **one manufactured artifact**. The available archive does not include the raw point cloud, native CMM report, calibration records, repeat builds, or a measurement-uncertainty budget. The reported deviations combine effects from CAD-to-STL conversion, manufacture, alignment, measurement, filtering, and data treatment. They characterize the observed artifact-and-inspection chain; they do not establish machine capability.
+
+## Research record
+
+- S.-C. T. Toguem, C. Mehdi-Souzani, H. Nouira, and N. Anwer, “[Axiomatic Design of Customised Additive Manufacturing Artefacts](https://doi.org/10.1016/j.procir.2020.02.246),” *Procedia CIRP*, vol. 91, pp. 899–904, 2020.
+- S.-C. T. Toguem Tagne, C. Mehdi-Souzani, H. Nouira, and N. Anwer, “[Customized Design of Artefacts for Additive Manufacturing](https://hal.science/hal-02390901),” euspen, 2019.
+
+The publications remain attributed to all listed authors and institutions. This page presents my contribution as a professional engineering case study while preserving that collaborative research record.
