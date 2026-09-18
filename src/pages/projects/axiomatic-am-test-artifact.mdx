@@ -6,8 +6,8 @@ title: Axiomatic design of an AM test artifact
 description: A complete three-axis case study connecting requirements-led mechanical design, a physical NC718 LPBF build, dimensional metrology, and traceable technical project delivery.
 category: Additive manufacturing · Design · Metrology · Project delivery
 context: 2018–2020 research record · 2026 engineering extension
-role: Requirements, artifact design, build and inspection coordination, analysis, and dissemination
-result: 18 requirements and constraints · 14 feature groups · 62 reported values
+role: Project lead for requirements, axiomatic design, CAD, fabrication planning, laser-scan data processing, CMM analysis, and dissemination
+result: 18 requirements and constraints · 14 feature groups · 62 physical measurement values
 ---
 
 ![CAD overview of the customized additive-manufacturing test artifact](/projects/am-test-artifact/cad-overview.png)
@@ -17,11 +17,13 @@ result: 18 requirements and constraints · 14 feature groups · 62 reported valu
 | Item | Project record |
 | --- | --- |
 | Engineering purpose | Create a customizable test artifact from explicit geometric-performance and inspection needs rather than reuse a universal benchmark geometry |
-| Personal contribution | Requirements definition, functional decomposition, artifact architecture and CAD, coordination of the design–build–inspect sequence, analysis, and research dissemination within a collaborative study |
+| Personal responsibility | I led the engineering work: requirements definition, functional decomposition, artifact architecture and CAD, fabrication and inspection planning, laser point-cloud processing, tactile-CMM result analysis, and research dissemination |
 | Physical realization | NC718 artifact manufactured by Selective Laser Melting on an AddUp FormUp 350 and retained on its build plate for inspection |
 | Evidence chain | Requirements → feature architecture → CAD and drawing → LPBF build → laser scan and tactile CMM → measured deviations → design actions |
 | Historical outputs | Physical artifact, dimensioned definition, inspection record, 2019 euspen contribution, and 2020 Procedia CIRP article |
 | 2026 extension | Versioned parametric CAD, traceability, synthetic software-validation path, project controls, automated verification, and controlled portfolio publication |
+
+I carried out the design and metrology activities documented below, including cleaning and adaptively filtering the laser-scan point cloud, comparing it with the original nominal CAD in CATIA, and checking the comparison in GOM Inspect. The research publications that followed remain credited to all listed coauthors and institutions.
 
 ## Challenge, objectives, and scope
 
@@ -49,7 +51,7 @@ The first experiment was intentionally bounded. Repeat builds, causal separation
 
 ## Axis 1 — Mechanical and axiomatic design
 
-The historical definition contained **13 functional requirements** and **5 design constraints**. These 18 inputs were translated into **14 measurable feature groups** within a reported envelope of **73.8 × 68.85 × 16.65 mm**.
+The artifact definition contained **13 functional requirements** and **5 design constraints**. I translated these 18 inputs into **14 measurable feature groups** within an overall envelope of **73.8 × 68.85 × 16.65 mm**.
 
 ### Axiomatic-design logic
 
@@ -80,12 +82,12 @@ The final layout balanced geometric coverage with probe clearance, scanner line 
 
 ![Two reviewed views of the manufactured NC718 artifact retained on its build plate](/projects/am-test-artifact/manufactured-artifact-two-views.jpg)
 
-*Two complementary views of the manufactured artifact. The web image was extracted from the supplied photo sheet, recomposed for legibility, and stripped of personal metadata.*
+*Two complementary views of the manufactured artifact, prepared for clear web presentation.*
 
-| Manufacturing item | Recorded condition |
+| Manufacturing item | Build condition |
 | --- | --- |
 | Process and machine | Selective Laser Melting on an AddUp FormUp 350 |
-| Material | NC718, reported as Inconel alloy 718 |
+| Material | NC718, an Inconel 718 nickel alloy |
 | Layer thickness | 40 µm |
 | Laser power | 190 W for contouring; 201 W for hatching |
 | Build plate | Not preheated |
@@ -108,23 +110,23 @@ Metrology was part of the design input, not an end-of-project add-on. Feature ty
 | Form and orientation checks | Contact-stylus CMM with Renishaw MODUS | Quantify selected form and orientation characteristics |
 | Interpretation | Group results by geometry, orientation, internal/external role, and datum relationship | Convert measurements into design and experiment lessons |
 
-The curated numerical record contains **39 form and dimensional values** plus **23 orientation values**, for **62 reported physical measurements** on one build.
+The numerical record contains **39 form and dimensional values** plus **23 orientation values**, for **62 physical measurement values** from the manufactured artifact. These are the finalized measurement outputs used in the study; the public portfolio does not distribute the raw scan or native CMM files.
 
 ### Concrete results from the manufactured artifact
 
-| Physical observation | Reported result | Engineering reading |
+| Physical observation | Measured result | Engineering reading |
 | --- | ---: | --- |
-| Flatness of four base corner planes | Mean **0.367 mm**; range **0.2277–0.4682 mm** | The source associated the dominant lower-artifact deviations with an apparent angular build-plate offset |
+| Flatness of four base corner planes | Mean **0.367 mm**; range **0.2277–0.4682 mm** | My analysis associated the dominant lower-artifact deviations with an apparent angular build-plate offset |
 | Form deviation of X/Y-oriented cylinders | Mean **0.595 mm**; range **0.4224–0.7944 mm** | Cross-build cylinders were markedly less accurate than Z-oriented cylindrical surfaces |
 | Form deviation of Z cylindrical surfaces | Mean **0.081 mm**; range **0.0431–0.2527 mm** | Orientation strongly influenced the observed form accuracy |
 | Form deviation of unsupported cones | Mean **0.587 mm**; range **0.4686–0.6720 mm** | Visual and measured evidence both supported a support-aware design strategy |
-| External-feature dimensional deviation | Mean **0.041 mm**, five reported values | External Z-oriented features formed the more accurate selected comparison group |
-| Internal-feature dimensional deviation | Mean **0.173 mm**, five reported values | The mean was **4.24×** the external-feature value |
-| Maximum reported perpendicularity error | **0.4682 mm** | The dominant case involved base-related references |
-| Maximum reported parallelism error | **0.291 mm** | The highest value involved datum A and plane C |
-| Maximum reported concentricity error | **0.928 mm** | Coaxial relationships exposed a major alignment deviation |
+| External-feature dimensional deviation | Mean **0.041 mm**, five measurements | External Z-oriented features formed the more accurate selected comparison group |
+| Internal-feature dimensional deviation | Mean **0.173 mm**, five measurements | The mean was **4.24×** the external-feature value |
+| Maximum perpendicularity error | **0.4682 mm** | The dominant case involved base-related references |
+| Maximum parallelism error | **0.291 mm** | The highest value involved datum A and plane C |
+| Maximum concentricity error | **0.928 mm** | Coaxial relationships exposed a major alignment deviation |
 
-![Generated summary of the reported physical metrology results](/projects/am-test-artifact/metrology-summary.svg)
+![Summary of the physical metrology results](/projects/am-test-artifact/metrology-summary.svg)
 
 ### From measurement to design action
 
@@ -158,7 +160,7 @@ The work was managed as a sequence of engineering decisions rather than as an is
 - **Resources:** geometry coverage was balanced against material, build time, footprint, support removal, and inspection effort.
 - **Interfaces:** design, file conversion, process planning, build, scanning, tactile measurement, analysis, and publication were treated as one technical chain.
 - **Evidence quality:** physical historical measurements and later synthetic software data were separated and labelled.
-- **Attribution:** the professional case study identifies my contribution while preserving the collective authorship of the 2019 and 2020 research outputs.
+- **Authorship and collaboration:** I carried out the engineering work described here; the 2019 and 2020 publications retain full coauthorship and institutional attribution.
 - **Release control:** the 2026 extension adds a charter, WBS, risk register, decision log, verification matrix, publication gates, version tags, and continuous integration.
 
 ## Deliverables and engineering value
@@ -170,7 +172,7 @@ The project produced more than a geometry:
 - a compact CAD definition and six-page dimensioned drawing;
 - a manufactured NC718 artifact and documented LPBF conditions;
 - a combined laser-scan and tactile-CMM inspection route;
-- 62 curated physical measurement values and evidence-bounded conclusions;
+- 62 physical measurement values organized for analysis and design decisions;
 - conference and peer-reviewed publications;
 - a reusable 2026 parametric and traceable engineering workflow.
 
@@ -188,13 +190,13 @@ The later repository work turns the historical method into an executable enginee
 | Laser and tactile CMM results | Inspection mapping plus explicitly synthetic data for software-path verification |
 | Research analysis and publications | FR–DP visualization, information-content demonstrator, alternative ranking, CI, and release controls |
 
-The 2026 model is **a new parametric implementation informed by the research**, not a claimed recovery of the missing native 2018 CAD. No physical artifact has been manufactured from the 2026 model. Its synthetic records test the software workflow; they are not presented as machine or part measurements.
+The 2026 model is **a new parametric implementation informed by the research**. It is presented separately from the original 2018 native CAD, which is not distributed in the repository. No physical artifact has been manufactured from the 2026 model. Its synthetic records test the software workflow; they are not presented as machine or part measurements.
 
-## Evidence limits and next steps
+## Interpretation boundary and next steps
 
-The reported values describe **one manufactured artifact**. The available public-safe record does not include the raw point cloud, native CMM report, calibration records, repeat builds, or a measurement-uncertainty budget. The deviations combine effects from CAD-to-STL conversion, manufacture, alignment, measurement, filtering, and data treatment. They characterize the observed artifact-and-inspection chain; they do not establish machine capability, calibration status, or conformity with a current standard.
+The values describe **one manufactured artifact**. During the study, I cleaned and adaptively filtered the laser point cloud, mapped it against the original nominal CAD in CATIA, verified the comparison in GOM Inspect, and analyzed form and orientation results obtained by tactile CMM with Renishaw MODUS. This public portfolio presents the resulting maps and measurement values rather than distributing raw point-cloud, native CMM, calibration, or proprietary working files.
 
-The next rigorous validation stage would include repeated builds, controlled orientation and support experiments, raw scan and CMM retention, a documented uncertainty budget, on-plate versus removed-part comparison, and physical validation of a selected 2026 parametric configuration.
+Because the experiment used one build, the deviations combine effects from CAD-to-STL conversion, manufacture, alignment, measurement, filtering, and data treatment. They diagnose the observed artifact-and-inspection chain; they do not establish statistical machine capability, calibration status, or conformity with a current standard. A further validation stage would add repeated builds, controlled orientation and support experiments, a documented uncertainty budget, on-plate versus removed-part comparison, and physical validation of a selected 2026 parametric configuration.
 
 ## Competencies demonstrated
 
@@ -207,4 +209,4 @@ The next rigorous validation stage would include repeated builds, controlled ori
 - S.-C. T. Toguem, C. Mehdi-Souzani, H. Nouira, and N. Anwer, “[Axiomatic Design of Customised Additive Manufacturing Artefacts](https://doi.org/10.1016/j.procir.2020.02.246),” *Procedia CIRP*, vol. 91, pp. 899–904, 2020.
 - S.-C. T. Toguem Tagne, C. Mehdi-Souzani, H. Nouira, and N. Anwer, “[Customized Design of Artefacts for Additive Manufacturing](https://hal.science/hal-02390901),” euspen, 2019.
 
-The publications remain attributed to all listed authors and institutions. This page presents my engineering contribution while preserving the collaborative research record and the limits of the available evidence.
+The publications remain attributed to all listed authors and institutions. This page documents the engineering work I carried out while preserving the collaborative publication record.

@@ -10,7 +10,8 @@
     "preview": "astro preview",
     "check": "astro check",
     "check:links": "node scripts/check-internal-links.mjs",
-    "validate": "npm run check && npm run build && npm run check:links"
+    "check:voice": "node scripts/check-author-voice.mjs",
+    "validate": "npm run check:voice && npm run check && npm run build && npm run check:links"
   },
   "dependencies": {
     "@astrojs/mdx": "8.0.1",

@@ -6,8 +6,8 @@ title: Conception axiomatique d’un artefact d’essai pour la fabrication addi
 description: Étude de cas complète selon trois axes, reliant conception mécanique issue des exigences, fabrication physique LPBF en NC718, métrologie dimensionnelle et gestion technique traçable du projet.
 category: Fabrication additive · Conception · Métrologie · Gestion de projet
 context: Dossier de recherche 2018–2020 · extension d’ingénierie 2026
-role: Exigences, conception de l’artefact, coordination fabrication et contrôle, analyse et diffusion
-result: 18 exigences et contraintes · 14 groupes de fonctions · 62 valeurs rapportées
+role: Pilotage des exigences, conception axiomatique, CAO, préparation de la fabrication, traitement du nuage de points, analyse MMT et diffusion
+result: 18 exigences et contraintes · 14 groupes de fonctions · 62 valeurs de mesure physique
 ---
 
 ![Vue CAO de l’artefact d’essai personnalisé pour la fabrication additive](/projects/am-test-artifact/cad-overview.png)
@@ -17,11 +17,13 @@ result: 18 exigences et contraintes · 14 groupes de fonctions · 62 valeurs rap
 | Élément | Dossier du projet |
 | --- | --- |
 | Finalité d’ingénierie | Concevoir un artefact d’essai personnalisable à partir de besoins explicites de performance géométrique et de contrôle, plutôt que reprendre une géométrie étalon universelle |
-| Contribution personnelle | Définition des exigences, décomposition fonctionnelle, architecture et CAO de l’artefact, coordination de la chaîne conception–fabrication–contrôle, analyse et diffusion au sein d’une étude collaborative |
+| Responsabilité personnelle | J’ai piloté le travail d’ingénierie : définition des exigences, décomposition fonctionnelle, architecture et CAO, préparation de la fabrication et du contrôle, traitement du nuage de points laser, analyse des résultats MMT et diffusion scientifique |
 | Réalisation physique | Artefact en NC718 fabriqué par Selective Laser Melting sur AddUp FormUp 350 puis contrôlé en restant fixé sur son plateau |
 | Chaîne de preuves | Exigences → architecture des fonctions → CAO et plan → fabrication LPBF → scanner laser et MMT tactile → écarts mesurés → décisions de conception |
 | Livrables historiques | Artefact physique, définition cotée, dossier de contrôle, communication euspen 2019 et article Procedia CIRP 2020 |
 | Extension 2026 | CAO paramétrique versionnée, traçabilité, chaîne synthétique de validation logicielle, maîtrise du projet, vérification automatisée et publication contrôlée du portfolio |
+
+J’ai réalisé les activités de conception et de métrologie présentées ci-dessous, notamment le nettoyage et le filtrage adaptatif du nuage de points laser, sa comparaison avec la CAO nominale d’origine dans CATIA et la vérification de cette comparaison dans GOM Inspect. Les publications issues du projet conservent l’attribution complète de tous les coauteurs et établissements.
 
 ## Problème, objectifs et périmètre
 
@@ -49,7 +51,7 @@ La première expérimentation avait un périmètre volontairement limité. Les f
 
 ## Axe 1 — Conception mécanique et axiomatique
 
-La définition historique comportait **13 exigences fonctionnelles** et **5 contraintes de conception**. Ces 18 entrées ont été traduites en **14 groupes de fonctions mesurables** dans une enveloppe rapportée de **73,8 × 68,85 × 16,65 mm**.
+La définition de l’artefact comportait **13 exigences fonctionnelles** et **5 contraintes de conception**. J’ai traduit ces 18 entrées en **14 groupes de fonctions mesurables** dans une enveloppe globale de **73,8 × 68,85 × 16,65 mm**.
 
 ### Logique de conception axiomatique
 
@@ -80,9 +82,9 @@ L’implantation finale équilibrait couverture géométrique, dégagement du pa
 
 ![Deux vues contrôlées de l’artefact en NC718 conservé sur son plateau de fabrication](/projects/am-test-artifact/manufactured-artifact-two-views.jpg)
 
-*Deux vues complémentaires de l’artefact fabriqué. L’image web a été extraite de la planche photographique fournie, recomposée pour améliorer la lecture et débarrassée des métadonnées personnelles.*
+*Deux vues complémentaires de l’artefact fabriqué, préparées pour une présentation web lisible.*
 
-| Élément de fabrication | Condition rapportée |
+| Élément de fabrication | Condition de fabrication |
 | --- | --- |
 | Procédé et machine | Selective Laser Melting sur AddUp FormUp 350 |
 | Matériau | NC718, décrit comme alliage Inconel 718 |
@@ -108,23 +110,23 @@ La métrologie constituait une donnée d’entrée de la conception, et non une 
 | Contrôles de forme et d’orientation | MMT à palpeur tactile avec Renishaw MODUS | Quantifier certaines caractéristiques de forme et d’orientation |
 | Interprétation | Regroupement par géométrie, orientation, rôle interne ou externe et relation aux références | Transformer les mesures en enseignements de conception et d’expérimentation |
 
-Le dossier numérique contient **39 valeurs de forme et dimensionnelles** ainsi que **23 valeurs d’orientation**, soit **62 mesures physiques rapportées** sur une fabrication.
+Le dossier numérique contient **39 valeurs de forme et dimensionnelles** ainsi que **23 valeurs d’orientation**, soit **62 valeurs de mesure physique** obtenues sur l’artefact fabriqué. Il s’agit des résultats finalisés utilisés dans l’étude ; le portfolio public ne diffuse pas les fichiers bruts du scanner ni les fichiers MMT natifs.
 
 ### Résultats concrets sur la pièce fabriquée
 
-| Observation physique | Résultat rapporté | Lecture technique |
+| Observation physique | Résultat mesuré | Lecture technique |
 | --- | ---: | --- |
-| Planéité des quatre plans d’angle de la base | Moyenne **0,367 mm** ; étendue **0,2277–0,4682 mm** | La source associait les écarts dominants de la partie basse à un décalage angulaire apparent du plateau |
+| Planéité des quatre plans d’angle de la base | Moyenne **0,367 mm** ; étendue **0,2277–0,4682 mm** | Mon analyse associait les écarts dominants de la partie basse à un décalage angulaire apparent du plateau |
 | Écart de forme des cylindres orientés X/Y | Moyenne **0,595 mm** ; étendue **0,4224–0,7944 mm** | Les cylindres transversaux étaient nettement moins précis que les surfaces cylindriques selon Z |
 | Écart de forme des surfaces cylindriques selon Z | Moyenne **0,081 mm** ; étendue **0,0431–0,2527 mm** | L’orientation influençait fortement la précision de forme observée |
 | Écart de forme des cônes sans support | Moyenne **0,587 mm** ; étendue **0,4686–0,6720 mm** | Les observations visuelles et mesurées confirmaient le besoin d’une conception attentive aux supports |
-| Écart dimensionnel des fonctions externes | Moyenne **0,041 mm**, cinq valeurs rapportées | Les fonctions externes orientées selon Z formaient le groupe de comparaison le plus précis |
-| Écart dimensionnel des fonctions internes | Moyenne **0,173 mm**, cinq valeurs rapportées | La moyenne était **4,24 fois** celle des fonctions externes |
+| Écart dimensionnel des fonctions externes | Moyenne **0,041 mm**, cinq mesures | Les fonctions externes orientées selon Z formaient le groupe de comparaison le plus précis |
+| Écart dimensionnel des fonctions internes | Moyenne **0,173 mm**, cinq mesures | La moyenne était **4,24 fois** celle des fonctions externes |
 | Erreur maximale de perpendicularité | **0,4682 mm** | Le cas dominant concernait les références de la base |
 | Erreur maximale de parallélisme | **0,291 mm** | La valeur la plus élevée concernait la référence A et le plan C |
 | Erreur maximale de concentricité | **0,928 mm** | Les relations coaxiales révélaient un écart d’alignement important |
 
-![Synthèse générée des résultats métrologiques physiques rapportés](/projects/am-test-artifact/metrology-summary.svg)
+![Synthèse des résultats métrologiques physiques](/projects/am-test-artifact/metrology-summary.svg)
 
 ### De la mesure à la décision de conception
 
@@ -158,7 +160,7 @@ Le travail a été piloté comme une succession de décisions d’ingénierie et
 - **Ressources :** la couverture géométrique a été équilibrée avec matière, temps de fabrication, encombrement, retrait des supports et effort de contrôle.
 - **Interfaces :** conception, conversion des fichiers, préparation procédé, fabrication, numérisation, mesure tactile, analyse et publication ont été traitées comme une seule chaîne technique.
 - **Qualité des preuves :** les mesures physiques historiques et les données synthétiques logicielles ultérieures ont été séparées et clairement identifiées.
-- **Attribution :** l’étude de cas professionnelle explicite ma contribution tout en préservant l’attribution collective des productions de recherche de 2019 et 2020.
+- **Réalisation et collaboration :** j’ai mené le travail d’ingénierie décrit ici ; les publications de 2019 et 2020 conservent l’attribution complète des coauteurs et des établissements.
 - **Maîtrise des versions :** l’extension 2026 ajoute charte, WBS, registre des risques, journal des décisions, matrice de vérification, portes de publication, jalons de version et intégration continue.
 
 ## Livrables et valeur d’ingénierie
@@ -170,7 +172,7 @@ Le projet a produit davantage qu’une géométrie :
 - une définition CAO compacte et un plan coté de six pages ;
 - un artefact en NC718 fabriqué avec des conditions LPBF documentées ;
 - une chaîne combinant numérisation laser et contrôle MMT tactile ;
-- 62 valeurs physiques organisées et des conclusions limitées par les preuves ;
+- 62 valeurs de mesure physique organisées pour l’analyse et les décisions de conception ;
 - une communication scientifique et une publication évaluée par les pairs ;
 - une chaîne d’ingénierie paramétrique et traçable réutilisable en 2026.
 
@@ -188,13 +190,13 @@ Le travail ultérieur transforme la méthode historique en démonstrateur d’in
 | Résultats scanner laser et MMT tactile | Plan de contrôle et données explicitement synthétiques pour vérifier la chaîne logicielle |
 | Analyse de recherche et publications | Visualisation FR–DP, démonstrateur de contenu informationnel, classement d’alternatives, CI et maîtrise des versions |
 
-Le modèle 2026 est **une nouvelle implémentation paramétrique nourrie par la recherche**, et non la récupération annoncée de la CAO native de 2018, absente des sources. Aucun artefact physique n’a été fabriqué à partir du modèle 2026. Ses données synthétiques testent la chaîne logicielle ; elles ne représentent ni une machine ni une pièce réelle.
+Le modèle 2026 est **une nouvelle implémentation paramétrique nourrie par la recherche**. Il est présenté séparément de la CAO native de 2018, qui n’est pas diffusée dans le dépôt. Aucun artefact physique n’a été fabriqué à partir du modèle 2026. Ses données synthétiques testent la chaîne logicielle ; elles ne représentent ni une machine ni une pièce réelle.
 
-## Limites des preuves et suites
+## Périmètre d’interprétation et suites
 
-Les valeurs décrivent **un seul artefact fabriqué**. Le dossier public maîtrisé ne contient ni le nuage de points brut, ni le rapport MMT natif, ni les certificats d’étalonnage, ni des fabrications répétées, ni un budget d’incertitude. Les écarts combinent conversion CAO–STL, fabrication, alignement, mesure, filtrage et traitement. Ils caractérisent la chaîne observée artefact–inspection et non la capabilité de la machine, son état d’étalonnage ou la conformité à une norme actuelle.
+Les valeurs décrivent **un seul artefact fabriqué**. Pendant l’étude, j’ai nettoyé et filtré de manière adaptative le nuage de points laser, comparé celui-ci à la CAO nominale d’origine dans CATIA, vérifié la comparaison dans GOM Inspect et analysé les résultats de forme et d’orientation obtenus par MMT tactile avec Renishaw MODUS. Le portfolio public présente les cartes d’écarts et les valeurs de mesure qui en résultent sans diffuser les nuages bruts, fichiers MMT natifs, certificats d’étalonnage ou fichiers de travail propriétaires.
 
-La prochaine étape de validation rigoureuse comprendrait des fabrications répétées, des essais contrôlés d’orientation et de support, la conservation des données brutes scanner et MMT, un budget d’incertitude documenté, la comparaison sur plateau et après détachement, puis la validation physique d’une configuration paramétrique 2026 sélectionnée.
+Comme l’expérimentation portait sur une fabrication, les écarts combinent conversion CAO–STL, fabrication, alignement, mesure, filtrage et traitement. Ils diagnostiquent la chaîne artefact–inspection observée ; ils n’établissent ni la capabilité statistique de la machine, ni son état d’étalonnage, ni la conformité à une norme actuelle. Une validation complémentaire ajouterait des fabrications répétées, des essais contrôlés d’orientation et de support, un budget d’incertitude documenté, la comparaison sur plateau et après détachement, puis la validation physique d’une configuration paramétrique 2026 sélectionnée.
 
 ## Compétences démontrées
 
@@ -207,4 +209,4 @@ La prochaine étape de validation rigoureuse comprendrait des fabrications rép�
 - S.-C. T. Toguem, C. Mehdi-Souzani, H. Nouira et N. Anwer, « [Axiomatic Design of Customised Additive Manufacturing Artefacts](https://doi.org/10.1016/j.procir.2020.02.246) », *Procedia CIRP*, vol. 91, p. 899–904, 2020.
 - S.-C. T. Toguem Tagne, C. Mehdi-Souzani, H. Nouira et N. Anwer, « [Customized Design of Artefacts for Additive Manufacturing](https://hal.science/hal-02390901) », euspen, 2019.
 
-Les publications restent attribuées à l’ensemble des auteurs et institutions. Cette page présente ma contribution d’ingénierie tout en préservant le caractère collectif de la recherche et les limites des preuves disponibles.
+Les publications restent attribuées à l’ensemble des auteurs et institutions. Cette page documente le travail d’ingénierie que j’ai réalisé tout en préservant l’attribution collective des publications.
