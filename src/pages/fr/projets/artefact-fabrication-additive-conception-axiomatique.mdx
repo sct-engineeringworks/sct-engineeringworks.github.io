@@ -3,22 +3,41 @@ layout: ../../../layouts/CaseStudyLayout.astro
 lang: fr
 alternate: /projects/axiomatic-am-test-artifact/
 title: Conception axiomatique d’un artefact d’essai pour la fabrication additive
-description: Conception mécanique issue des exigences, fabrication physique LPBF, métrologie dimensionnelle et conduite traçable d’un artefact d’essai personnalisé.
-category: Fabrication additive · Conception · Métrologie
-context: Étude de recherche académique, 2018–2020
-role: Conception de l’artefact, étude expérimentale, analyse et diffusion
-result: 62 valeurs rapportées sur une fabrication physique
+description: Étude de cas complète selon trois axes, reliant conception mécanique issue des exigences, fabrication physique LPBF en NC718, métrologie dimensionnelle et gestion technique traçable du projet.
+category: Fabrication additive · Conception · Métrologie · Gestion de projet
+context: Dossier de recherche 2018–2020 · extension d’ingénierie 2026
+role: Exigences, conception de l’artefact, coordination fabrication et contrôle, analyse et diffusion
+result: 18 exigences et contraintes · 14 groupes de fonctions · 62 valeurs rapportées
 ---
 
 ![Vue CAO de l’artefact d’essai personnalisé pour la fabrication additive](/projects/am-test-artifact/cad-overview.png)
 
-## La question d’ingénierie
+## Le projet en un coup d’œil
 
-Aucune géométrie étalon unique ne peut représenter tous les procédés, machines, échelles, matériaux et contraintes de contrôle de la fabrication additive. Le projet traitait donc une question plus durable :
+| Élément | Dossier du projet |
+| --- | --- |
+| Finalité d’ingénierie | Concevoir un artefact d’essai personnalisable à partir de besoins explicites de performance géométrique et de contrôle, plutôt que reprendre une géométrie étalon universelle |
+| Contribution personnelle | Définition des exigences, décomposition fonctionnelle, architecture et CAO de l’artefact, coordination de la chaîne conception–fabrication–contrôle, analyse et diffusion au sein d’une étude collaborative |
+| Réalisation physique | Artefact en NC718 fabriqué par Selective Laser Melting sur AddUp FormUp 350 puis contrôlé en restant fixé sur son plateau |
+| Chaîne de preuves | Exigences → architecture des fonctions → CAO et plan → fabrication LPBF → scanner laser et MMT tactile → écarts mesurés → décisions de conception |
+| Livrables historiques | Artefact physique, définition cotée, dossier de contrôle, communication euspen 2019 et article Procedia CIRP 2020 |
+| Extension 2026 | CAO paramétrique versionnée, traçabilité, chaîne synthétique de validation logicielle, maîtrise du projet, vérification automatisée et publication contrôlée du portfolio |
+
+## Problème, objectifs et périmètre
+
+Aucune géométrie étalon unique ne peut représenter tous les procédés, machines, volumes de fabrication, matériaux, échelles, orientations et moyens de contrôle de la fabrication additive. Le projet traitait donc une question plus durable :
 
 > Comment concevoir systématiquement un artefact d’essai à partir d’objectifs définis de performance géométrique et de mesure ?
 
-J’ai développé une méthode issue des exigences : décomposer l’objectif d’évaluation, regrouper les fonctions liées en modules, sélectionner des fonctions géométriques mesurables, puis faire évoluer l’implantation selon les contraintes de fabrication, d’inspection, de matière et de temps.
+Le travail poursuivait cinq objectifs liés :
+
+1. évaluer forme, dimension, orientation, position et résolution géométrique sur un artefact compact ;
+2. exposer plusieurs orientations de fabrication, échelles, géométries internes et externes, surfaces sans support et formes libres ;
+3. traduire chaque besoin d’évaluation en fonction mesurable et en moyen de contrôle ;
+4. préserver l’accès du scanner et du palpeur, la stabilité des références et une condition pratique de contrôle sur plateau ;
+5. maîtriser matière, temps de fabrication, encombrement, post-traitement, retrait des supports et erreurs évitables de la chaîne numérique.
+
+La première expérimentation avait un périmètre volontairement limité. Les fabrications répétées, la séparation causale de chaque source d’erreur et les couples fonctionnels d’assemblage ont été reportés afin de concentrer les ressources sur un artefact diagnostique général orienté GPS/GD&T. Ce choix est essentiel : l’étude devait révéler des effets d’ingénierie, et non établir une capabilité statistique du procédé.
 
 ## Trois axes de projet indissociables
 
@@ -26,30 +45,44 @@ J’ai développé une méthode issue des exigences : décomposer l’objectif d
 | --- | --- | --- |
 | **Conception mécanique et axiomatique** | Quelle géométrie créer, et pourquoi ? | Décomposition fonctionnelle, modules d’exigences, raisonnement FR–DP, sélection des fonctions, orientation, implantation compacte, CAO, dimensions et intention GPS/GD&T |
 | **Métrologie de précision** | Comment mesurer et interpréter chaque intention de conception ? | Stratégie de références, accessibilité du scanner et du palpeur, comparaison laser nuage–CAO, contrôle MMT tactile et écarts physiques de forme, dimension et orientation |
-| **Conduite technique du projet** | Comment cadrer, exécuter, vérifier et communiquer le travail ? | Revue de littérature, priorités, exclusions assumées, contraintes de ressources, chaîne conception–fabrication–mesure, maîtrise des preuves et jalons de publication |
+| **Gestion technique du projet** | Comment cadrer, exécuter, vérifier et communiquer le travail ? | Revue de littérature, priorités, exclusions assumées, contraintes de ressources, chaîne conception–fabrication–mesure, maîtrise des preuves et jalons de publication |
 
 ## Axe 1 — Conception mécanique et axiomatique
 
-La définition historique comportait **13 exigences fonctionnelles**, **5 contraintes de conception** et **14 groupes de fonctions**. L’artefact réunissait des fonctions planes, prismatiques, cylindriques, coniques, sphériques, internes, externes, coaxiales, rainurées, chanfreinées et de forme libre dans une enveloppe rapportée de **73,8 × 68,85 × 16,65 mm**.
+La définition historique comportait **13 exigences fonctionnelles** et **5 contraintes de conception**. Ces 18 entrées ont été traduites en **14 groupes de fonctions mesurables** dans une enveloppe rapportée de **73,8 × 68,85 × 16,65 mm**.
 
-La méthode ne partait pas d’une géométrie prédéfinie. Elle suivait une séquence maîtrisée :
+### Logique de conception axiomatique
 
-1. définir et classer les exigences ;
-2. décomposer chaque besoin en fonctions élémentaires ;
-3. regrouper les fonctions liées afin de limiter la redondance géométrique ;
-4. sélectionner géométrie, taille, orientation et répétition selon les mesurandes ;
-5. préserver l’accès du scanner ou du palpeur ;
-6. équilibrer la couverture avec la matière, le temps de fabrication, le post-traitement et l’effort de contrôle.
+| Étape de conception | Décision d’ingénierie | Résultat |
+| --- | --- | --- |
+| Cadrer le besoin | Partir du contexte d’évaluation et de contrôle, et non d’une forme étalon prédéterminée | Exigences fonctionnelles et contraintes classées |
+| Décomposer | Transformer les objectifs généraux en fonctions élémentaires pouvant être résolues et mesurées | Besoins de forme, dimension, orientation, position, résolution, accès et chaîne numérique |
+| Constituer les modules | Regrouper les exigences liées afin qu’une même fonction fournisse plusieurs mesurandes sans redondance inutile | Modules d’exigences et familles de fonctions |
+| Relier FR et DP | Choisir explicitement géométrie, taille, orientation, répétition et position comme paramètres de conception | Correspondance FR–DP et architecture compacte |
+| Préserver l’indépendance | Examiner les interactions entre fonctions, accès, supports, références, matériau et volume de fabrication | Implantation itérée et compromis maîtrisés |
+| Réduire la charge informationnelle | Privilégier les solutions qui couvrent le besoin avec moins d’hypothèses fragiles et moins d’effort de fabrication ou de contrôle | Concepts hiérarchisés et définition justifiée |
 
-La recherche a ensuite été formalisée avec les concepts de conception axiomatique : exigences fonctionnelles, paramètres de conception, matrice de conception, indépendance des exigences et sélection attentive au contenu informationnel.
+Le travail de 2018 a établi la démarche issue des exigences ; la publication évaluée par les pairs en 2020 l’a formalisée avec les concepts de conception axiomatique : exigences fonctionnelles, paramètres de conception, matrice de conception, indépendance des exigences et sélection attentive au contenu informationnel.
 
-![Artefact en NC718 montrant les fonctions internes et externes de tailles décroissantes](/projects/am-test-artifact/manufactured-artifact.jpg)
+### Architecture de l’artefact
 
-## Axe 2 — Métrologie de précision
+| Famille de fonctions | Exemples intégrés | Principaux mesurandes ou questions |
+| --- | --- | --- |
+| Planes et prismatiques | Base portant les références, échelles de cubes, plans orientés | Planéité, rectitude, dimension, angularité, parallélisme et perpendicularité |
+| Circulaires | Cylindres, trous et cylindres creux coaxiaux | Diamètre, circularité, cylindricité, concentricité et position |
+| Coniques et courbes | Troncs de cône et hémisphères | Forme, comportement des pentes, comparaison interne–externe et géométrie sans support |
+| Résolution | Trous, bossages, rainures et fonctions polygonales de tailles décroissantes | Taille minimale, évacuation de poudre et sensibilité à l’orientation |
+| Géométrie complexe | Surfaces de forme libre positives et négatives | Reproduction de formes non prismatiques et accessibilité de la mesure |
 
-L’artefact a été physiquement fabriqué et contrôlé. Le dossier disponible documente la chaîne suivante :
+L’implantation finale équilibrait couverture géométrique, dégagement du palpeur, visibilité du scanner, évacuation de poudre, stratégie de support, consommation de matière, durée de fabrication, post-traitement et stabilité de la base de référence.
 
-| Élément | Condition rapportée |
+## Réalisation physique
+
+![Deux vues contrôlées de l’artefact en NC718 conservé sur son plateau de fabrication](/projects/am-test-artifact/manufactured-artifact-two-views.jpg)
+
+*Deux vues complémentaires de l’artefact fabriqué. L’image web a été extraite de la planche photographique fournie, recomposée pour améliorer la lecture et débarrassée des métadonnées personnelles.*
+
+| Élément de fabrication | Condition rapportée |
 | --- | --- |
 | Procédé et machine | Selective Laser Melting sur AddUp FormUp 350 |
 | Matériau | NC718, décrit comme alliage Inconel 718 |
@@ -57,53 +90,121 @@ L’artefact a été physiquement fabriqué et contrôlé. Le dossier disponible
 | Puissance laser | 190 W pour les contours ; 201 W pour le remplissage |
 | Plateau | Non préchauffé |
 | Durée de fabrication | Environ 8 heures |
-| Condition de contrôle | Artefact conservé sur le plateau |
-| Comparaison globale | Scanner laser Kreon sur MMT ; comparaison nuage–CAO dans CATIA et vérification avec GOM Inspect |
-| Forme et orientation | MMT tactile avec Renishaw MODUS |
+| Condition de contrôle | Artefact conservé sur le plateau afin de limiter les effets liés au détachement |
 
-Le dossier numérique contient **39 valeurs de forme et dimensionnelles** ainsi que **23 valeurs d’orientation**. Quelques synthèses calculées sont présentées ci-dessous.
+Les photographies rendent l’architecture tangible : échelles de résolution internes et externes, anneaux coaxiaux, cylindres orientés, formes coniques, surfaces libres et fonctions latérales partagent une base compacte portant les références.
+
+## Axe 2 — Métrologie de précision
+
+La métrologie constituait une donnée d’entrée de la conception, et non une activité ajoutée en fin de projet. Le type de fonction, l’orientation, l’accès, la stratégie de références et la méthode de comparaison prévue ont été considérés pendant le développement de l’artefact.
+
+### Chaîne de contrôle
+
+| Étape | Méthode | Finalité |
+| --- | --- | --- |
+| Acquisition globale | Scanner laser Kreon monté sur MMT | Numériser les surfaces fabriquées alors que l’artefact restait fixé au plateau |
+| Préparation du nuage | Nettoyage et filtrage adaptatif | Préparer la représentation mesurée pour la comparaison au nominal |
+| Comparaison globale | Analyse nuage–CAO dans CATIA, vérifiée dans GOM Inspect | Visualiser la répartition des écarts géométriques par rapport au modèle nominal |
+| Contrôles de forme et d’orientation | MMT à palpeur tactile avec Renishaw MODUS | Quantifier certaines caractéristiques de forme et d’orientation |
+| Interprétation | Regroupement par géométrie, orientation, rôle interne ou externe et relation aux références | Transformer les mesures en enseignements de conception et d’expérimentation |
+
+Le dossier numérique contient **39 valeurs de forme et dimensionnelles** ainsi que **23 valeurs d’orientation**, soit **62 mesures physiques rapportées** sur une fabrication.
+
+### Résultats concrets sur la pièce fabriquée
 
 | Observation physique | Résultat rapporté | Lecture technique |
 | --- | ---: | --- |
-| Planéité des quatre plans d’angle de la base | Moyenne **0,367 mm** ; étendue **0,2277–0,4682 mm** | Les écarts de la partie basse ont été associés à un décalage angulaire apparent du plateau |
-| Écart de forme des cylindres orientés X/Y | Moyenne **0,595 mm** | Les cylindres transversaux étaient nettement moins précis que les surfaces cylindriques selon Z |
-| Écart de forme des surfaces cylindriques selon Z | Moyenne **0,081 mm** | L’orientation influençait fortement la précision de forme |
-| Écart de forme des cônes sans support | Moyenne **0,587 mm** | Les observations visuelles et mesurées confirmaient le besoin d’une conception attentive aux supports |
-| Écart dimensionnel des fonctions externes | Moyenne **0,041 mm** | Les fonctions externes selon Z formaient le groupe le plus précis |
-| Écart dimensionnel des fonctions internes | Moyenne **0,173 mm** | La moyenne était **4,24 fois** celle des fonctions externes |
+| Planéité des quatre plans d’angle de la base | Moyenne **0,367 mm** ; étendue **0,2277–0,4682 mm** | La source associait les écarts dominants de la partie basse à un décalage angulaire apparent du plateau |
+| Écart de forme des cylindres orientés X/Y | Moyenne **0,595 mm** ; étendue **0,4224–0,7944 mm** | Les cylindres transversaux étaient nettement moins précis que les surfaces cylindriques selon Z |
+| Écart de forme des surfaces cylindriques selon Z | Moyenne **0,081 mm** ; étendue **0,0431–0,2527 mm** | L’orientation influençait fortement la précision de forme observée |
+| Écart de forme des cônes sans support | Moyenne **0,587 mm** ; étendue **0,4686–0,6720 mm** | Les observations visuelles et mesurées confirmaient le besoin d’une conception attentive aux supports |
+| Écart dimensionnel des fonctions externes | Moyenne **0,041 mm**, cinq valeurs rapportées | Les fonctions externes orientées selon Z formaient le groupe de comparaison le plus précis |
+| Écart dimensionnel des fonctions internes | Moyenne **0,173 mm**, cinq valeurs rapportées | La moyenne était **4,24 fois** celle des fonctions externes |
+| Erreur maximale de perpendicularité | **0,4682 mm** | Le cas dominant concernait les références de la base |
+| Erreur maximale de parallélisme | **0,291 mm** | La valeur la plus élevée concernait la référence A et le plan C |
 | Erreur maximale de concentricité | **0,928 mm** | Les relations coaxiales révélaient un écart d’alignement important |
 
 ![Synthèse générée des résultats métrologiques physiques rapportés](/projects/am-test-artifact/metrology-summary.svg)
 
-L’expérience avait une valeur diagnostique plutôt que statistique : un seul artefact compact rendait visibles les effets d’orientation, les défauts des fonctions sans support, la difficulté des fonctions internes et le décalage apparent du plateau dans un problème de contrôle cohérent.
+### De la mesure à la décision de conception
 
-## Axe 3 — Conduite technique du projet
+| Preuve | Implication pour la conception ou le projet |
+| --- | --- |
+| Les cylindres X/Y présentaient un écart de forme bien supérieur aux surfaces cylindriques selon Z | Traiter l’orientation comme un paramètre de conception et prévoir des comparaisons d’orientation délibérément contrôlées lors d’une fabrication suivante |
+| Les fonctions internes présentaient une moyenne dimensionnelle 4,24 fois supérieure au groupe externe sélectionné | Réexaminer ensemble tailles internes minimales, évacuation de poudre, accessibilité, compensation et stratégie de contrôle |
+| Les cônes sans support présentaient de forts écarts de forme | Revoir angle de surplomb, supports, accumulation thermique locale et accès au post-traitement |
+| Planéité de base et perpendicularité constituaient des cas dominants | Séparer les effets d’alignement du plateau, déformation de la base, bridage, détachement et références de mesure dans une expérimentation contrôlée |
+| La concentricité atteignait 0,928 mm | Renforcer le transfert des références et la maîtrise de l’alignement des empilements coaxiaux |
+
+L’expérience avait une valeur diagnostique plutôt que statistique. Elle rendait visibles les effets d’orientation, le comportement des fonctions sans support, la difficulté des fonctions internes et les problèmes de références ou d’alignement dans un même problème conception–fabrication–contrôle.
+
+## Axe 3 — Gestion technique du projet
 
 Le travail a été piloté comme une succession de décisions d’ingénierie et non comme un exercice de CAO isolé.
 
 | Phase | Décision de pilotage | Livrable principal |
 | --- | --- | --- |
-| Cadrage scientifique | Comparer les artefacts existants et remplacer la sélection directe d’une géométrie par une méthode issue des exigences | Revue de l’état de l’art et critères de conception |
-| Périmètre et priorités | Centrer le premier essai sur une évaluation GPS/GD&T générale ; reporter essais causaux, fabrications répétées et liaisons d’assemblage | Exigences hiérarchisées et exclusions explicites |
-| Conception conceptuelle | Regrouper les exigences liées afin de réduire la redondance et la consommation de ressources | Modules d’exigences et familles de fonctions |
-| Conception détaillée | Équilibrer couverture, accessibilité, fabricabilité, encombrement, matière et post-traitement | Modèle CAO, architecture des fonctions et plan coté |
-| Préparation fabrication–contrôle | Fixer matériau, paramètres, mesure sur plateau, numérisation laser et contrôles tactiles | Plan de fabrication et d’inspection |
-| Vérification et apprentissage | Comparer la pièce au nominal et identifier les écarts dominants | Tableaux de mesure, cartes d’écarts, conclusions et suites |
-| Diffusion et réutilisation | Transformer l’étude en preuve durable de recherche et d’ingénierie | Communication 2019, article 2020 et étude de cas professionnelle maîtrisée |
+| 1. Cadrage scientifique | Comparer les artefacts existants et remplacer la sélection directe d’une géométrie par une méthode issue des exigences | Revue de l’état de l’art et critères de conception |
+| 2. Périmètre et priorités | Centrer le premier essai sur une évaluation GPS/GD&T générale ; reporter essais causaux, fabrications répétées et liaisons d’assemblage | Exigences hiérarchisées et exclusions explicites |
+| 3. Conception conceptuelle | Regrouper les exigences liées afin de réduire la redondance et la consommation de ressources | Modules d’exigences et familles de fonctions |
+| 4. Conception détaillée | Équilibrer couverture, accessibilité, fabricabilité, encombrement, matière, supports et post-traitement | Modèle CAO, architecture des fonctions et définition cotée de six pages |
+| 5. Préparation fabrication–contrôle | Fixer matériau, paramètres, mesure sur plateau, numérisation laser et contrôles tactiles | Plan de fabrication et d’inspection |
+| 6. Vérification et apprentissage | Comparer la pièce au nominal et identifier les écarts dominants | Tableaux de mesure, cartes d’écarts, conclusions et actions suivantes |
+| 7. Diffusion et réutilisation | Transformer l’étude en preuve durable de recherche et d’ingénierie | Communication 2019, article 2020 et étude de cas professionnelle maîtrisée |
 
-## Ce que démontre ce projet
+### Décisions et risques maîtrisés
 
-- **Conception :** transformer des objectifs d’évaluation larges en une architecture mécanique compacte et mesurable.
-- **Métrologie :** relier intention des fonctions, accessibilité, références, technologies de contrôle, résultats physiques et limites d’interprétation.
-- **Conduite de projet :** maîtriser périmètre, ressources, interfaces, preuves, décisions et diffusion sur un cycle d’ingénierie complet.
+- **Périmètre :** répétabilité, séparation causale et essais d’assemblage ont été consignés comme travaux futurs plutôt que déduits d’une fabrication unique.
+- **Ressources :** la couverture géométrique a été équilibrée avec matière, temps de fabrication, encombrement, retrait des supports et effort de contrôle.
+- **Interfaces :** conception, conversion des fichiers, préparation procédé, fabrication, numérisation, mesure tactile, analyse et publication ont été traitées comme une seule chaîne technique.
+- **Qualité des preuves :** les mesures physiques historiques et les données synthétiques logicielles ultérieures ont été séparées et clairement identifiées.
+- **Attribution :** l’étude de cas professionnelle explicite ma contribution tout en préservant l’attribution collective des productions de recherche de 2019 et 2020.
+- **Maîtrise des versions :** l’extension 2026 ajoute charte, WBS, registre des risques, journal des décisions, matrice de vérification, portes de publication, jalons de version et intégration continue.
 
-## Limites de preuve
+## Livrables et valeur d’ingénierie
 
-Les valeurs décrivent **un seul artefact fabriqué**. L’archive disponible ne contient ni le nuage de points brut, ni le rapport MMT natif, ni les certificats d’étalonnage, ni des fabrications répétées, ni un budget d’incertitude. Les écarts combinent les effets de conversion CAO–STL, fabrication, alignement, mesure, filtrage et traitement. Ils caractérisent la chaîne observée artefact–inspection et non la capabilité de la machine.
+Le projet a produit davantage qu’une géométrie :
+
+- un ensemble classé de 18 exigences et contraintes ;
+- une architecture fonctions–mesurandes couvrant 14 groupes de fonctions ;
+- une définition CAO compacte et un plan coté de six pages ;
+- un artefact en NC718 fabriqué avec des conditions LPBF documentées ;
+- une chaîne combinant numérisation laser et contrôle MMT tactile ;
+- 62 valeurs physiques organisées et des conclusions limitées par les preuves ;
+- une communication scientifique et une publication évaluée par les pairs ;
+- une chaîne d’ingénierie paramétrique et traçable réutilisable en 2026.
+
+Le résultat principal est une méthode : partir de la finalité d’évaluation, dériver des fonctions mesurables, maîtriser interactions et ressources, fabriquer l’artefact, puis utiliser les preuves physiques pour décider ce que la conception et l’expérimentation suivantes devront traiter.
+
+## Extension paramétrique et traçable de 2026
+
+Le travail ultérieur transforme la méthode historique en démonstrateur d’ingénierie exécutable tout en maintenant une séparation stricte entre les deux classes de preuves.
+
+| Étude physique historique, 2018–2020 | Extension d’ingénierie, 2026 |
+| --- | --- |
+| Artefact personnalisé issu des exigences | Schémas versionnés d’exigences et de configuration |
+| Vues CAO historiques et définition cotée | Constructeurs CadQuery modulaires et deux variantes maîtrisées |
+| Une fabrication physique en NC718 | Exports STEP/STL, manifeste des fonctions, rapport de construction et contrôles géométriques automatisés |
+| Résultats scanner laser et MMT tactile | Plan de contrôle et données explicitement synthétiques pour vérifier la chaîne logicielle |
+| Analyse de recherche et publications | Visualisation FR–DP, démonstrateur de contenu informationnel, classement d’alternatives, CI et maîtrise des versions |
+
+Le modèle 2026 est **une nouvelle implémentation paramétrique nourrie par la recherche**, et non la récupération annoncée de la CAO native de 2018, absente des sources. Aucun artefact physique n’a été fabriqué à partir du modèle 2026. Ses données synthétiques testent la chaîne logicielle ; elles ne représentent ni une machine ni une pièce réelle.
+
+## Limites des preuves et suites
+
+Les valeurs décrivent **un seul artefact fabriqué**. Le dossier public maîtrisé ne contient ni le nuage de points brut, ni le rapport MMT natif, ni les certificats d’étalonnage, ni des fabrications répétées, ni un budget d’incertitude. Les écarts combinent conversion CAO–STL, fabrication, alignement, mesure, filtrage et traitement. Ils caractérisent la chaîne observée artefact–inspection et non la capabilité de la machine, son état d’étalonnage ou la conformité à une norme actuelle.
+
+La prochaine étape de validation rigoureuse comprendrait des fabrications répétées, des essais contrôlés d’orientation et de support, la conservation des données brutes scanner et MMT, un budget d’incertitude documenté, la comparaison sur plateau et après détachement, puis la validation physique d’une configuration paramétrique 2026 sélectionnée.
+
+## Compétences démontrées
+
+- **Conception mécanique et axiomatique :** traduire des objectifs généraux en exigences fonctionnelles, paramètres de conception, modules de fonctions, architecture compacte, CAO et définition cotée.
+- **Métrologie de précision :** relier mesurandes, références, accessibilité, scanner laser, contrôle tactile, traitement des données, preuves quantitatives et limites d’interprétation.
+- **Gestion technique du projet :** maîtriser périmètre, ressources, interfaces, risques, vérification, décisions, preuves, versions et diffusion sur un cycle d’ingénierie complet.
 
 ## Publications associées
 
 - S.-C. T. Toguem, C. Mehdi-Souzani, H. Nouira et N. Anwer, « [Axiomatic Design of Customised Additive Manufacturing Artefacts](https://doi.org/10.1016/j.procir.2020.02.246) », *Procedia CIRP*, vol. 91, p. 899–904, 2020.
 - S.-C. T. Toguem Tagne, C. Mehdi-Souzani, H. Nouira et N. Anwer, « [Customized Design of Artefacts for Additive Manufacturing](https://hal.science/hal-02390901) », euspen, 2019.
 
-Les publications restent attribuées à l’ensemble des auteurs et institutions. Cette page présente ma contribution comme une étude de cas professionnelle tout en préservant ce caractère collectif.
+Les publications restent attribuées à l’ensemble des auteurs et institutions. Cette page présente ma contribution d’ingénierie tout en préservant le caractère collectif de la recherche et les limites des preuves disponibles.

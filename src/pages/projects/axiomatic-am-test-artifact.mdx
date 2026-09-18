@@ -3,22 +3,41 @@ layout: ../../layouts/CaseStudyLayout.astro
 lang: en
 alternate: /fr/projets/artefact-fabrication-additive-conception-axiomatique/
 title: Axiomatic design of an AM test artifact
-description: Requirements-led mechanical design, physical LPBF manufacture, dimensional metrology, and traceable project delivery for a customized additive-manufacturing test artifact.
-category: Additive manufacturing · Design · Metrology
-context: Academic research case study, 2018–2020
-role: Artifact design, experimental study, analysis, and dissemination
-result: 62 reported values on one physical build
+description: A complete three-axis case study connecting requirements-led mechanical design, a physical NC718 LPBF build, dimensional metrology, and traceable technical project delivery.
+category: Additive manufacturing · Design · Metrology · Project delivery
+context: 2018–2020 research record · 2026 engineering extension
+role: Requirements, artifact design, build and inspection coordination, analysis, and dissemination
+result: 18 requirements and constraints · 14 feature groups · 62 reported values
 ---
 
 ![CAD overview of the customized additive-manufacturing test artifact](/projects/am-test-artifact/cad-overview.png)
 
-## The engineering question
+## Project at a glance
 
-No single benchmark geometry can represent every additive-manufacturing process, machine, scale, material, and inspection constraint. The project therefore addressed a more durable question:
+| Item | Project record |
+| --- | --- |
+| Engineering purpose | Create a customizable test artifact from explicit geometric-performance and inspection needs rather than reuse a universal benchmark geometry |
+| Personal contribution | Requirements definition, functional decomposition, artifact architecture and CAD, coordination of the design–build–inspect sequence, analysis, and research dissemination within a collaborative study |
+| Physical realization | NC718 artifact manufactured by Selective Laser Melting on an AddUp FormUp 350 and retained on its build plate for inspection |
+| Evidence chain | Requirements → feature architecture → CAD and drawing → LPBF build → laser scan and tactile CMM → measured deviations → design actions |
+| Historical outputs | Physical artifact, dimensioned definition, inspection record, 2019 euspen contribution, and 2020 Procedia CIRP article |
+| 2026 extension | Versioned parametric CAD, traceability, synthetic software-validation path, project controls, automated verification, and controlled portfolio publication |
+
+## Challenge, objectives, and scope
+
+No single benchmark geometry can represent every additive-manufacturing process, machine, build volume, material, feature scale, orientation, and measurement system. The project therefore addressed a more durable question:
 
 > How can a test artifact be designed systematically for a defined set of geometric-performance and measurement needs?
 
-I developed a requirements-led method that decomposed the evaluation objective, grouped related functions into modules, selected measurable geometric features, and iterated the layout against manufacturing, inspection, material, and build-time constraints.
+The work pursued five connected objectives:
+
+1. assess form, size, orientation, position, and geometric resolution on one compact artifact;
+2. expose different build orientations, feature scales, internal and external geometries, unsupported surfaces, and free-form features;
+3. translate each evaluation need into a measurable feature and an inspection route;
+4. preserve scanner and probe access, datum stability, and a practical on-plate inspection condition;
+5. control material, build time, footprint, post-processing, support-removal effort, and avoidable digital-chain errors.
+
+The first experiment was intentionally bounded. Repeat builds, causal separation of individual error sources, and fit-for-assembly pairs were deferred so that the available resources could focus on a general GD&T-oriented diagnostic artifact. That scope choice is important: the study was designed to reveal engineering effects, not to establish statistical process capability.
 
 ## Three inseparable project axes
 
@@ -30,52 +49,94 @@ I developed a requirements-led method that decomposed the evaluation objective, 
 
 ## Axis 1 — Mechanical and axiomatic design
 
-The historical definition contained **13 functional requirements**, **5 design constraints**, and **14 feature groups**. The resulting artifact combined planar, prismatic, cylindrical, conical, spherical, internal, external, coaxial, slot, chamfer, and free-form features within a reported envelope of **73.8 × 68.85 × 16.65 mm**.
+The historical definition contained **13 functional requirements** and **5 design constraints**. These 18 inputs were translated into **14 measurable feature groups** within a reported envelope of **73.8 × 68.85 × 16.65 mm**.
 
-The method did not begin with a predetermined geometry. It began with the evaluation purpose, then followed a controlled sequence:
+### Axiomatic-design logic
 
-1. define and classify the requirements;
-2. decompose each need into elementary functions;
-3. group related functions to limit redundant features;
-4. select geometry, size, orientation, and repetition from the intended measurands;
-5. preserve scanner or probe access;
-6. balance coverage against material, build time, post-processing, and inspection effort.
+| Design step | Engineering decision | Output |
+| --- | --- | --- |
+| Frame the need | Start from the intended evaluation and inspection context, not from a predetermined benchmark shape | Classified functional requirements and constraints |
+| Decompose | Break broad evaluation goals into elementary functions that can be solved and measured | Form, dimension, orientation, location, resolution, access, and digital-chain needs |
+| Form modules | Group related requirements so that one feature can provide several useful measurands without unnecessary redundancy | Requirement modules and feature families |
+| Map FRs to DPs | Select geometry, size, orientation, repetition, and location as explicit design parameters | FR–DP mapping and a compact artifact architecture |
+| Preserve independence | Review interactions between feature choices, access, supports, datums, material, and build envelope | Iterated layout and controlled compromises |
+| Reduce information burden | Prefer solutions that satisfy the required coverage with fewer fragile assumptions and lower manufacturing or inspection effort | Ranked concepts and a justified embodiment |
 
-The research was later formalized with Axiomatic Design concepts: functional requirements, design parameters, design-matrix reasoning, requirement independence, and information-conscious solution selection.
+The 2018 work established the requirements-driven method; the 2020 peer-reviewed publication formalized it with Axiomatic Design concepts, including functional requirements, design parameters, design-matrix reasoning, requirement independence, and information-conscious solution selection.
 
-![Manufactured NC718 artifact showing decreasing internal and external features](/projects/am-test-artifact/manufactured-artifact.jpg)
+### Artifact architecture
 
-## Axis 2 — Precision metrology
+| Feature family | Examples in the artifact | Principal measurands or questions |
+| --- | --- | --- |
+| Planar and prismatic | Datum-bearing base, cube ladders, oriented planes | Flatness, straightness, size, angularity, parallelism, perpendicularity |
+| Circular | Cylinders, holes, and coaxial hollow cylinders | Diameter, circularity, cylindricity, concentricity, and location |
+| Tapered and curved | Truncated cones and hemispheres | Form, taper behavior, internal–external comparison, and unsupported geometry |
+| Resolution features | Decreasing holes, bosses, slots, and polygonal features | Minimum feasible size, powder evacuation, and orientation sensitivity |
+| Complex geometry | Positive and negative free-form surfaces | Reproduction of non-prismatic geometry and measurement accessibility |
 
-The artifact was physically manufactured and inspected. The available record documents the following chain:
+The final layout balanced geometric coverage with probe clearance, scanner line of sight, powder removal, support strategy, material use, build duration, post-processing, and the need for a stable reference base.
 
-| Item | Recorded condition |
+## Physical realization
+
+![Two reviewed views of the manufactured NC718 artifact retained on its build plate](/projects/am-test-artifact/manufactured-artifact-two-views.jpg)
+
+*Two complementary views of the manufactured artifact. The web image was extracted from the supplied photo sheet, recomposed for legibility, and stripped of personal metadata.*
+
+| Manufacturing item | Recorded condition |
 | --- | --- |
 | Process and machine | Selective Laser Melting on an AddUp FormUp 350 |
 | Material | NC718, reported as Inconel alloy 718 |
 | Layer thickness | 40 µm |
-| Laser power | 190 W contouring; 201 W hatching |
+| Laser power | 190 W for contouring; 201 W for hatching |
 | Build plate | Not preheated |
 | Build duration | Approximately 8 hours |
-| Inspection condition | Artifact retained on the build plate |
-| Global comparison | Kreon laser scanner on a CMM; point-cloud-to-CAD comparison in CATIA and verification in GOM Inspect |
-| Form and orientation | Contact CMM with Renishaw MODUS |
+| Inspection condition | Artifact retained on the build plate to limit removal-induced effects |
 
-The numerical record contains **39 form and dimensional values** plus **23 orientation values**. Selected generated summaries are shown below.
+The photographs make the architecture tangible: external and internal resolution ladders, coaxial rings, oriented cylinders, tapered forms, free-form surfaces, and side features share a compact datum-bearing base.
+
+## Axis 2 — Precision metrology
+
+Metrology was part of the design input, not an end-of-project add-on. Feature type, orientation, access, datum strategy, and expected comparison method were considered while the artifact was being developed.
+
+### Inspection chain
+
+| Stage | Method | Purpose |
+| --- | --- | --- |
+| Global acquisition | Kreon laser scanner mounted on a CMM | Capture the manufactured surfaces while the artifact remained on the plate |
+| Point-cloud preparation | Cleaning and adaptive filtering | Prepare the measured representation for nominal comparison |
+| Global comparison | Point-cloud-to-CAD analysis in CATIA, checked in GOM Inspect | Visualize distributed geometric deviations against the nominal model |
+| Form and orientation checks | Contact-stylus CMM with Renishaw MODUS | Quantify selected form and orientation characteristics |
+| Interpretation | Group results by geometry, orientation, internal/external role, and datum relationship | Convert measurements into design and experiment lessons |
+
+The curated numerical record contains **39 form and dimensional values** plus **23 orientation values**, for **62 reported physical measurements** on one build.
+
+### Concrete results from the manufactured artifact
 
 | Physical observation | Reported result | Engineering reading |
 | --- | ---: | --- |
-| Flatness of four base corner planes | Mean **0.367 mm**; range **0.2277–0.4682 mm** | Large lower-artifact deviations were associated with an apparent angular build-plate offset |
-| Form deviation of X/Y-oriented cylinders | Mean **0.595 mm** | Cross-build cylinders were markedly less accurate than Z-oriented cylindrical surfaces |
-| Form deviation of Z cylindrical surfaces | Mean **0.081 mm** | Orientation strongly influenced form accuracy |
-| Form deviation of unsupported cones | Mean **0.587 mm** | Visual and measured evidence both supported a support-aware design strategy |
-| External-feature dimensional deviation | Mean **0.041 mm** | External Z-oriented features were the more accurate comparison group |
-| Internal-feature dimensional deviation | Mean **0.173 mm** | The mean was **4.24×** the external-feature value |
+| Flatness of four base corner planes | Mean **0.367 mm**; range **0.2277–0.4682 mm** | The source associated the dominant lower-artifact deviations with an apparent angular build-plate offset |
+| Form deviation of X/Y-oriented cylinders | Mean **0.595 mm**; range **0.4224–0.7944 mm** | Cross-build cylinders were markedly less accurate than Z-oriented cylindrical surfaces |
+| Form deviation of Z cylindrical surfaces | Mean **0.081 mm**; range **0.0431–0.2527 mm** | Orientation strongly influenced the observed form accuracy |
+| Form deviation of unsupported cones | Mean **0.587 mm**; range **0.4686–0.6720 mm** | Visual and measured evidence both supported a support-aware design strategy |
+| External-feature dimensional deviation | Mean **0.041 mm**, five reported values | External Z-oriented features formed the more accurate selected comparison group |
+| Internal-feature dimensional deviation | Mean **0.173 mm**, five reported values | The mean was **4.24×** the external-feature value |
+| Maximum reported perpendicularity error | **0.4682 mm** | The dominant case involved base-related references |
+| Maximum reported parallelism error | **0.291 mm** | The highest value involved datum A and plane C |
 | Maximum reported concentricity error | **0.928 mm** | Coaxial relationships exposed a major alignment deviation |
 
 ![Generated summary of the reported physical metrology results](/projects/am-test-artifact/metrology-summary.svg)
 
-The experiment was diagnostic rather than statistical: one compact artifact made orientation effects, unsupported-feature defects, internal-feature difficulty, and the apparent build-plate offset visible in a connected inspection problem.
+### From measurement to design action
+
+| Evidence | Design or project implication |
+| --- | --- |
+| X/Y cylinders showed much higher form deviation than Z-oriented cylindrical surfaces | Treat orientation as a design variable and include deliberately controlled orientation comparisons in the next build |
+| Internal features showed a 4.24× higher mean dimensional deviation than the selected external group | Review minimum internal sizes, powder evacuation, access, compensation, and the inspection strategy together |
+| Unsupported cones showed large form deviations | Revisit overhang angle, supports, local heat accumulation, and post-processing access |
+| Base flatness and perpendicularity were dominant cases | Separate plate alignment, base distortion, fixturing, removal, and measurement-reference effects in a controlled follow-up experiment |
+| Concentricity reached 0.928 mm | Strengthen datum transfer and alignment control for coaxial feature stacks |
+
+The experiment was diagnostic rather than statistical. Its value was to make orientation effects, unsupported-feature behavior, internal-feature difficulty, and reference/alignment issues visible in one connected design–manufacture–inspection problem.
 
 ## Axis 3 — Technical project delivery
 
@@ -83,27 +144,67 @@ The work was managed as a sequence of engineering decisions rather than as an is
 
 | Phase | Management decision | Principal output |
 | --- | --- | --- |
-| Research framing | Compare existing artifacts and replace geometry-first selection with a requirements-led method | State-of-the-art review and design criteria |
-| Scope and priorities | Focus the first experiment on general GD&T assessment; defer causal experiments, repeat builds, and assembly pairs | Ranked requirements and explicit exclusions |
-| Concept development | Group related requirements to reduce geometric redundancy and resource consumption | Requirement modules and feature families |
-| Embodiment design | Balance coverage, accessibility, buildability, envelope, material, and post-processing | CAD model, feature architecture, and dimensioned drawing |
-| Build and inspection planning | Fix material, process parameters, on-plate inspection, laser scanning, and tactile checks | Manufacturing and inspection plan |
-| Verification and learning | Compare the physical artifact with nominal geometry and identify dominant deviations | Measurement tables, deviation maps, conclusions, and next actions |
-| Dissemination and reuse | Transform the study into durable research and engineering evidence | 2019 conference paper, 2020 journal article, and controlled portfolio case study |
+| 1. Research framing | Compare existing artifacts and replace geometry-first selection with a requirements-led method | State-of-the-art review and design criteria |
+| 2. Scope and priorities | Focus the first experiment on general GD&T assessment; defer causal experiments, repeat builds, and assembly pairs | Ranked requirements and explicit exclusions |
+| 3. Concept development | Group related requirements to reduce geometric redundancy and resource consumption | Requirement modules and feature families |
+| 4. Embodiment design | Balance coverage, accessibility, buildability, envelope, material, supports, and post-processing | CAD model, feature architecture, and six-page dimensioned definition |
+| 5. Build and inspection planning | Fix material, process parameters, on-plate inspection, laser scanning, and tactile checks | Manufacturing and inspection plan |
+| 6. Verification and learning | Compare the physical artifact with nominal geometry and identify dominant deviations | Measurement tables, deviation maps, conclusions, and next actions |
+| 7. Dissemination and reuse | Convert the study into durable research and engineering evidence | 2019 conference contribution, 2020 article, and controlled portfolio case study |
 
-## What this project demonstrates
+### Decisions and risks controlled
 
-- **Design:** the ability to translate broad evaluation objectives into a compact, measurable mechanical architecture.
-- **Metrology:** the ability to connect feature intent, access, datums, inspection technology, physical results, and interpretation limits.
-- **Project delivery:** the ability to control scope, resources, interfaces, evidence, decisions, and dissemination across a complete engineering lifecycle.
+- **Scope:** repeatability, causal separation, and assembly tests were recorded as future work rather than implied by one build.
+- **Resources:** geometry coverage was balanced against material, build time, footprint, support removal, and inspection effort.
+- **Interfaces:** design, file conversion, process planning, build, scanning, tactile measurement, analysis, and publication were treated as one technical chain.
+- **Evidence quality:** physical historical measurements and later synthetic software data were separated and labelled.
+- **Attribution:** the professional case study identifies my contribution while preserving the collective authorship of the 2019 and 2020 research outputs.
+- **Release control:** the 2026 extension adds a charter, WBS, risk register, decision log, verification matrix, publication gates, version tags, and continuous integration.
 
-## Evidence boundary
+## Deliverables and engineering value
 
-The values describe **one manufactured artifact**. The available archive does not include the raw point cloud, native CMM report, calibration records, repeat builds, or a measurement-uncertainty budget. The reported deviations combine effects from CAD-to-STL conversion, manufacture, alignment, measurement, filtering, and data treatment. They characterize the observed artifact-and-inspection chain; they do not establish machine capability.
+The project produced more than a geometry:
+
+- a classified set of 18 requirements and constraints;
+- a feature-to-measurand architecture covering 14 feature groups;
+- a compact CAD definition and six-page dimensioned drawing;
+- a manufactured NC718 artifact and documented LPBF conditions;
+- a combined laser-scan and tactile-CMM inspection route;
+- 62 curated physical measurement values and evidence-bounded conclusions;
+- conference and peer-reviewed publications;
+- a reusable 2026 parametric and traceable engineering workflow.
+
+The main engineering outcome is a method: begin with the evaluation purpose, derive measurable functions, control interactions and resources, manufacture the resulting artifact, and use physical evidence to decide what the next design and experiment must address.
+
+## 2026 parametric and traceable extension
+
+The later repository work turns the historical method into an executable engineering demonstrator while preserving a strict boundary between the two evidence classes.
+
+| Historical physical study, 2018–2020 | Engineering extension, 2026 |
+| --- | --- |
+| Requirements-led customized artifact | Versioned requirement and configuration schemas |
+| Historical CAD views and dimensioned definition | Modular CadQuery builders and two controlled variants |
+| One physical NC718 build | STEP/STL exports, feature manifest, build report, and automated geometry checks |
+| Laser and tactile CMM results | Inspection mapping plus explicitly synthetic data for software-path verification |
+| Research analysis and publications | FR–DP visualization, information-content demonstrator, alternative ranking, CI, and release controls |
+
+The 2026 model is **a new parametric implementation informed by the research**, not a claimed recovery of the missing native 2018 CAD. No physical artifact has been manufactured from the 2026 model. Its synthetic records test the software workflow; they are not presented as machine or part measurements.
+
+## Evidence limits and next steps
+
+The reported values describe **one manufactured artifact**. The available public-safe record does not include the raw point cloud, native CMM report, calibration records, repeat builds, or a measurement-uncertainty budget. The deviations combine effects from CAD-to-STL conversion, manufacture, alignment, measurement, filtering, and data treatment. They characterize the observed artifact-and-inspection chain; they do not establish machine capability, calibration status, or conformity with a current standard.
+
+The next rigorous validation stage would include repeated builds, controlled orientation and support experiments, raw scan and CMM retention, a documented uncertainty budget, on-plate versus removed-part comparison, and physical validation of a selected 2026 parametric configuration.
+
+## Competencies demonstrated
+
+- **Mechanical and axiomatic design:** translate broad evaluation goals into functional requirements, design parameters, feature modules, a compact architecture, CAD, and a dimensioned definition.
+- **Precision metrology:** connect measurands, datums, access, laser scanning, tactile inspection, data treatment, quantitative evidence, and interpretation limits.
+- **Technical project delivery:** control scope, resources, interfaces, risks, verification, decisions, evidence, versions, and dissemination across a complete engineering lifecycle.
 
 ## Research record
 
 - S.-C. T. Toguem, C. Mehdi-Souzani, H. Nouira, and N. Anwer, “[Axiomatic Design of Customised Additive Manufacturing Artefacts](https://doi.org/10.1016/j.procir.2020.02.246),” *Procedia CIRP*, vol. 91, pp. 899–904, 2020.
 - S.-C. T. Toguem Tagne, C. Mehdi-Souzani, H. Nouira, and N. Anwer, “[Customized Design of Artefacts for Additive Manufacturing](https://hal.science/hal-02390901),” euspen, 2019.
 
-The publications remain attributed to all listed authors and institutions. This page presents my contribution as a professional engineering case study while preserving that collaborative research record.
+The publications remain attributed to all listed authors and institutions. This page presents my engineering contribution while preserving the collaborative research record and the limits of the available evidence.

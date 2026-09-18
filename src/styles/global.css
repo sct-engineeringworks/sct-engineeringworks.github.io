@@ -1099,7 +1099,8 @@ h3 {
     padding-top: 45px;
   }
 
-  .evidence-table {
+  .evidence-table,
+  .prose table {
     display: block;
     overflow-x: auto;
   }
