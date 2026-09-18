@@ -1,0 +1,61 @@
+name: Apply prepared AM artifact portfolio update
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: prepared-portfolio-import
+  cancel-in-progress: false
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out complete repository history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Replace the working tree with the validated portfolio payload
+        shell: bash
+        run: |
+          set -euo pipefail
+          payload="sct-engineeringworks-site-am-artifact-update.zip"
+          staging="$RUNNER_TEMP/portfolio-import"
+          test -f "$payload"
+          rm -rf "$staging"
+          mkdir -p "$staging"
+          unzip -q "$payload" -d "$staging"
+          test -f "$staging/sct-engineeringworks.github.io/package.json"
+          rsync -a --delete \
+            --exclude='.git/' \
+            --exclude='.github/workflows/' \
+            "$staging/sct-engineeringworks.github.io/" ./
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Verify the final bilingual portfolio state
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm ci
+          npm run check
+          npm run build
+
+      - name: Commit the validated bilingual portfolio update
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "sct-engineeringworks"
+          git config user.email "sct-engineeringworks@users.noreply.github.com"
+          git add -A
+          git commit -m "feat: add bilingual AM artifact case study"
+          git push origin HEAD:main
